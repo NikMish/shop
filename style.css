@@ -1,0 +1,30 @@
+* {
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 18px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.shop-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.shop-gallery .item-image {
+  width: 15rem;
+  height: 15rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.footer {
+  border-top: 1px solid #ccc;
+  margin-top: 4rem;
+}
