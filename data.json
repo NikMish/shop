@@ -4,19 +4,31 @@
       "id": 1,
       "name": "Shirt",
       "price": 20,
-      "image": "aprons/images/apron-1.jpeg"
+      "images": [
+        "aprons/images/apron-1.jpeg",
+        "aprons/images/apron-2.jpeg",
+        "aprons/images/apron-3.jpeg"
+      ]
     },
     {
       "id": 2,
       "name": "Pants",
       "price": 30,
-      "image": "aprons/images/apron-2.jpeg"
+      "images": [
+        "aprons/images/apron-4.jpeg",
+        "aprons/images/apron-5.jpeg",
+        "aprons/images/apron-6.jpeg"
+      ]
     },
     {
       "id": 3,
       "name": "Shoes",
       "price": 50,
-      "image": "aprons/images/apron-3.jpeg"
+      "images": [
+        "aprons/images/apron-7.jpeg",
+        "aprons/images/apron-8.jpeg",
+        "aprons/images/apron-1.jpeg"
+      ]
     }
   ]
 }
