@@ -651,6 +651,7 @@ button.swiper-pagination-bullet {
   height: 15rem;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   border-radius: 0.5rem;
 }
 @media (max-width: 768px) {
@@ -720,10 +721,17 @@ h2 .sold {
   cursor: pointer;
   border: 1px solid #333;
   border-radius: 50%;
+  box-shadow: 10px 10px 10px 10px #fff;
 }
 .close-modal:hover {
   background-color: #333;
   color: #fff;
+}
+
+.description {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: #666;
 }
 
 /*# sourceMappingURL=shop.css.map*/

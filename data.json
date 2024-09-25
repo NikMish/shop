@@ -3,34 +3,95 @@
     {
       "id": 1,
       "name": "Teachers Apron",
-      "price": 60,
+      "price": 50,
       "sold": 0,
+      "category": "Aprons",
       "images": [
-        "aprons/images/apron-1.jpeg",
-        "aprons/images/apron-2.jpeg",
-        "aprons/images/apron-3.jpeg"
+        "shop-images/aprons/apron-1.jpeg",
+        "shop-images/aprons/apron-2.jpeg",
+        "shop-images/aprons/apron-3.jpeg",
+        "shop-images/aprons/apron-4.jpeg"
       ]
     },
     {
       "id": 2,
       "name": "Teachers Apron",
       "price": 40,
-      "sold": 0,
+      "sold": 1,
+      "category": "Aprons",
       "images": [
-        "aprons/images/apron-4.jpeg",
-        "aprons/images/apron-5.jpeg",
-        "aprons/images/apron-6.jpeg"
+        "shop-images/aprons/apron-5.jpeg",
+        "shop-images/aprons/apron-6.jpeg"
       ]
     },
     {
       "id": 3,
       "name": "Teachers Apron",
-      "price": 50,
-      "sold": 1,
+      "description": "This is DIY one of a kind teachers or gardening apron made out of denim jeans Features five pockets and a four 1/2 d-rings for accessories. Easy to put on and off with plastic buckle. Size is 25.5\" wide, 14.5\" tall. Heavy duty apron.",
+      "price": 60,
+      "sold": 0,
+      "category": "Aprons",
       "images": [
-        "aprons/images/apron-7.jpeg",
-        "aprons/images/apron-8.jpeg",
-        "aprons/images/apron-1.jpeg"
+        "shop-images/aprons/apron-7.jpeg",
+        "shop-images/aprons/apron-8.jpeg",
+        "shop-images/aprons/large-apron-b-3.jpeg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Small shoulder bag with embroidery upcycled denim",
+      "description": "This is DIY one of a kind hand bag made out of denim jeans. Has one internal pocket and two front and back jeans pockets. Has long adjustable shoulder strap. Size is 7\" wide, 9\" tall and 2.5\" deep",
+      "price": 65,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "images": [
+        "shop-images/bags/small-enbr-bag-2.jpeg",
+        "shop-images/bags/small-enbr-bag-3.jpeg",
+        "shop-images/bags/small-enbr-bag-4.jpeg",
+        "shop-images/bags/small-enbr-bag-5.jpeg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Denim shoulder patch work bag",
+      "description": "This is DIY one of a kind medium size hand bag made out of denim jeans patches. Has three internal pockets and zipper on the top. Size is 12\" wide, 8\" tall and 5\" deep on the bottom.",
+      "price": 114,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "images": [
+        "shop-images/bags/long-patch-bag-1.jpeg",
+        "shop-images/bags/long-patch-bag-2.jpeg",
+        "shop-images/bags/long-patch-bag-3.jpeg",
+        "shop-images/bags/long-patch-bag-4.jpeg",
+        "shop-images/bags/long-patch-bag-5.jpeg"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Denim tote patch work bag",
+      "description": "This is DIY one of a kind smallish size hand bag made out of denim jeans patches. Has internal pockets: one zipped pocket and two regular. Zipper on the top. Size is 9\" wide, 11\" tall and 4\" deep. The strap size is 10\" from shoulder to the bag.",
+      "price": 89,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "images": [
+        "shop-images/bags/tote-1.jpeg",
+        "shop-images/bags/tote-2.jpeg",
+        "shop-images/bags/tote-3.jpeg",
+        "shop-images/bags/tote-4.jpeg"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Denim shoulder bag",
+      "description": "This is DIY one of a kind small size hand bag made out of denim jeans patches. Has no internal pockets (forgot sorry). One side zipped pocket and zipper on the top. Size is 8\" wide, 9\" tall and 2\" deep. The strap size is 23\" from shoulder to the bag.",
+      "price": 99,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "images": [
+        "shop-images/bags/sholder-patch-1.jpeg",
+        "shop-images/bags/sholder-patch-2.jpeg",
+        "shop-images/bags/sholder-patch-3.jpeg",
+        "shop-images/bags/sholder-patch-4.jpeg"
       ]
     }
   ]

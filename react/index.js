@@ -62,7 +62,7 @@ const ShopApp = () => {
         <div className='shop-gallery'>
           {data.items.map((item, index) => (
             <a key={index} className="item" href="#"  onClick={() => openModal(item)}>
-              <div className="item-image" style={{backgroundImage: `url('${item.images[1]}')`}}>
+              <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
                 {(item.sold == 1) && <div className="sold">Sold</div>}
               </div>
               <div className="item-description">
@@ -86,6 +86,7 @@ const ShopApp = () => {
         <h2>
           {currentItem.name}
           {(currentItem.sold == 1) && <div className="sold"> - Sold</div>}
+          {(currentItem.description) && <div className="description">{currentItem.description}</div>}
         </h2>
         <button className='close-modal' onClick={closeModal}>X</button>
         <Carousel item={currentItem} />
