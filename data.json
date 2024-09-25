@@ -2,8 +2,9 @@
   "items": [
     {
       "id": 1,
-      "name": "Shirt",
-      "price": 20,
+      "name": "Teachers Apron",
+      "price": 60,
+      "sold": 0,
       "images": [
         "aprons/images/apron-1.jpeg",
         "aprons/images/apron-2.jpeg",
@@ -12,8 +13,9 @@
     },
     {
       "id": 2,
-      "name": "Pants",
-      "price": 30,
+      "name": "Teachers Apron",
+      "price": 40,
+      "sold": 0,
       "images": [
         "aprons/images/apron-4.jpeg",
         "aprons/images/apron-5.jpeg",
@@ -22,8 +24,9 @@
     },
     {
       "id": 3,
-      "name": "Shoes",
+      "name": "Teachers Apron",
       "price": 50,
+      "sold": 1,
       "images": [
         "aprons/images/apron-7.jpeg",
         "aprons/images/apron-8.jpeg",

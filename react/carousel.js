@@ -13,7 +13,6 @@ import './scss/carousel.scss';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
 export default function Carousel(props) {
-  console.log(props.item);
   return (
     <>
       <Swiper
@@ -34,19 +33,3 @@ export default function Carousel(props) {
     </>
   );
 }
-
-
-// {data.items.map((item, index) => (
-//   <SwiperSlide key={index}>
-//       <a className="item" href="aprons/">
-//         <div className="item-image" style={{backgroundImage: `url('${item.image}')`}}>
-//         </div>
-//         <div className="item-description">
-//           <h2>{item.name}</h2>
-//         </div>
-//         <div className="item-price">
-//         {item.price}
-//         </div>
-//       </a>
-//   </SwiperSlide>
-// ))}

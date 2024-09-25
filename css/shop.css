@@ -663,8 +663,7 @@ button.swiper-pagination-bullet {
   color: #ccc;
 }
 
-.shop-gallery .sold::after {
-  content: "Sold";
+.shop-gallery .sold {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -675,6 +674,11 @@ button.swiper-pagination-bullet {
   font-size: 1.5rem;
   font-weight: 700;
   color: #333;
+}
+
+h2 .sold {
+  display: inline;
+  font-style: italic;
 }
 
 .footer {

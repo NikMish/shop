@@ -33,7 +33,6 @@ __webpack_require__.r(__webpack_exports__);
 // import required modules
 
 function Carousel(props) {
-  console.log(props.item);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(swiper_react__WEBPACK_IMPORTED_MODULE_1__.Swiper, {
     cssMode: true,
     navigation: true,
@@ -51,21 +50,6 @@ function Carousel(props) {
     }));
   })));
 }
-
-// {data.items.map((item, index) => (
-//   <SwiperSlide key={index}>
-//       <a className="item" href="aprons/">
-//         <div className="item-image" style={{backgroundImage: `url('${item.image}')`}}>
-//         </div>
-//         <div className="item-description">
-//           <h2>{item.name}</h2>
-//         </div>
-//         <div className="item-price">
-//         {item.price}
-//         </div>
-//       </a>
-//   </SwiperSlide>
-// ))}
 
 /***/ }),
 
@@ -52844,10 +52828,8 @@ var ShopApp = function ShopApp() {
     // Fetch data.
     // if (isReady) {
     (0,_fetcher__WEBPACK_IMPORTED_MODULE_2__["default"])(fetch, setData, setLoading);
-    console.log('fetching data...');
     // }
   }, []);
-  console.log(data);
   function openModal(item) {
     setCurrentItem(item);
     setIsOpen(true);
@@ -52876,7 +52858,9 @@ var ShopApp = function ShopApp() {
       style: {
         backgroundImage: "url('".concat(item.images[1], "')")
       }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }, item.sold == 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "sold"
+    }, "Sold")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "item-description"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, item.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "item-price"
@@ -52887,7 +52871,9 @@ var ShopApp = function ShopApp() {
     onRequestClose: closeModal,
     style: customStyles,
     contentLabel: "Overview"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, currentItem.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, currentItem.name, currentItem.sold == 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "sold"
+  }, " - Sold")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     item: currentItem
   }))));
 };

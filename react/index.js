@@ -37,10 +37,8 @@ const ShopApp = () => {
     // Fetch data.
     // if (isReady) {
       useFetchData(fetch, setData, setLoading);
-      console.log('fetching data...');
     // }
   }, []);
-  console.log(data);
 
   function openModal(item) {
     setCurrentItem(item);
@@ -65,6 +63,7 @@ const ShopApp = () => {
           {data.items.map((item, index) => (
             <a key={index} className="item" href="#"  onClick={() => openModal(item)}>
               <div className="item-image" style={{backgroundImage: `url('${item.images[1]}')`}}>
+                {(item.sold == 1) && <div className="sold">Sold</div>}
               </div>
               <div className="item-description">
                 <h2>{item.name}</h2>
@@ -84,7 +83,10 @@ const ShopApp = () => {
         style={customStyles}
         contentLabel="Overview"
       >
-        <h2>{currentItem.name}</h2>
+        <h2>
+          {currentItem.name}
+          {(currentItem.sold == 1) && <div className="sold"> - Sold</div>}
+        </h2>
         <Carousel item={currentItem} />
       </Modal>
     </>
