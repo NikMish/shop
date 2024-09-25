@@ -1,14 +1,22 @@
+var(--font-color, #333);
+
 * {
   /* font-family: 'Roboto', sans-serif; */
   font-size: 18px;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #333;
+  color: var(--font-color);
 }
 
 .container {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 20px;
+}
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
 }
 
 .header {
@@ -39,6 +47,14 @@
   height: 15rem;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (max-width: 600px) {
+  .shop-gallery .item-image {
+    width: 30rem;
+    height: 15rem;
+    border: 2px solid red;
+  }
+  
 }
 
 
