@@ -52884,7 +52884,11 @@ var ShopApp = function ShopApp() {
     onClick: closeModal
   }, "X"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     item: currentItem
-  }))));
+  }), currentItem.paypal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "paypal-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: currentItem.paypal
+  }, "Purchase")))));
 };
 var appRoot = document.getElementById('my-shop-app');
 if (appRoot) {

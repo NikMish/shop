@@ -91,6 +91,8 @@ const ShopApp = () => {
         </h2>
         <button className='close-modal' onClick={closeModal}>X</button>
         <Carousel item={currentItem} />
+         {(currentItem.paypal) && <div className="paypal-button"><a href={currentItem.paypal}>Purchase</a></div>}
+          
       </Modal>
     </>
     </div>
