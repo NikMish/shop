@@ -31,6 +31,7 @@
       "price": 60,
       "sold": 0,
       "category": "Aprons",
+      "paypal": "https://www.paypal.com/ncp/payment/ZDVVX78X2CPJ4",
       "images": [
         "shop-images/aprons/apron-7.jpeg",
         "shop-images/aprons/apron-8.jpeg",
@@ -44,6 +45,7 @@
       "price": 65,
       "sold": 0,
       "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/6J4KU842JGVVE",
       "images": [
         "shop-images/bags/small-enbr-bag-2.jpeg",
         "shop-images/bags/small-enbr-bag-3.jpeg",
@@ -58,6 +60,7 @@
       "price": 114,
       "sold": 0,
       "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/GXTH3LJSLX6LY",
       "images": [
         "shop-images/bags/long-patch-bag-1.jpeg",
         "shop-images/bags/long-patch-bag-2.jpeg",
@@ -73,6 +76,7 @@
       "price": 89,
       "sold": 0,
       "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/PACG4RNSWKYAY",
       "images": [
         "shop-images/bags/tote-1.jpeg",
         "shop-images/bags/tote-2.jpeg",
@@ -87,6 +91,7 @@
       "price": 99,
       "sold": 0,
       "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/BACEQYT9DZ5JA",
       "images": [
         "shop-images/bags/sholder-patch-1.jpeg",
         "shop-images/bags/sholder-patch-2.jpeg",

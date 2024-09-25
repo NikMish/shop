@@ -144,3 +144,18 @@ h2 .sold {
   font-size: 0.8rem;
   color: #666;
 }
+
+.item-price {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  .paypal-button a {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #333;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+}

@@ -70,6 +70,7 @@ const ShopApp = () => {
               </div>
               <div className="item-price">
               $ {item.price}
+                {(item.paypal) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
               </div>
             </a>    
           ))}
