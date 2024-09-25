@@ -69,7 +69,7 @@ const ShopApp = () => {
                 <h2>{item.name}</h2>
               </div>
               <div className="item-price">
-              {item.price}
+              $ {item.price}
               </div>
             </a>    
           ))}

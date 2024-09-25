@@ -52864,7 +52864,7 @@ var ShopApp = function ShopApp() {
       className: "item-description"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, item.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "item-price"
-    }, item.price));
+    }, "$ ", item.price));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react_modal__WEBPACK_IMPORTED_MODULE_3___default()), {
     isOpen: modalIsOpen,
     onAfterOpen: afterOpenModal,
