@@ -52873,7 +52873,10 @@ var ShopApp = function ShopApp() {
     contentLabel: "Overview"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, currentItem.name, currentItem.sold == 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "sold"
-  }, " - Sold")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, " - Sold")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "close-modal",
+    onClick: closeModal
+  }, "X"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     item: currentItem
   }))));
 };

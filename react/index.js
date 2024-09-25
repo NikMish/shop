@@ -87,6 +87,7 @@ const ShopApp = () => {
           {currentItem.name}
           {(currentItem.sold == 1) && <div className="sold"> - Sold</div>}
         </h2>
+        <button className='close-modal' onClick={closeModal}>X</button>
         <Carousel item={currentItem} />
       </Modal>
     </>

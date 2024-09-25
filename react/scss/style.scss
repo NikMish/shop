@@ -12,7 +12,7 @@ $mobil-sm: 400px;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -35,6 +35,7 @@ $mobil-sm: 400px;
 
   .item {
     position: relative;
+    justify-self: center;
     display: block;
     text-decoration: none;
     color: #333;
@@ -117,4 +118,21 @@ h2 .sold {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid #333;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
 }
