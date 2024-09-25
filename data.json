@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Shirt",
+      "price": 20,
+      "image": "aprons/images/apron-1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Pants",
+      "price": 30,
+      "image": "aprons/images/apron-2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Shoes",
+      "price": 50,
+      "image": "aprons/images/apron-3.jpeg"
+    }
+  ]
+}
