@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import useFetchData from './fetcher';
 import Modal from 'react-modal';
 import Carousel from './carousel';
+import Filter from './filter';
 
 import './scss/style.scss';
 
@@ -12,9 +13,11 @@ const ShopApp = () => {
   const [fetch, setFetch] = useState(fetchUrl);
   const [isReady, setIsReady] = useState(false);
   const [data, setData] = useState([]);
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState({});
+  const [category, setCategory] = useState('all');
 
   const customStyles = {
     content: {
@@ -40,6 +43,12 @@ const ShopApp = () => {
     // }
   }, []);
 
+  useEffect(() => {
+    if (data.items && data.items.length > 0) {
+      setItems(data.items);
+    }
+  }, [data]);
+
   function openModal(item) {
     setCurrentItem(item);
     setIsOpen(true);
@@ -58,9 +67,10 @@ const ShopApp = () => {
     <div className='shop-app'>
     {loading && <div>Loading...</div>}
     <>
-      {(!loading && data.items.length > 0) && (
+      <Filter data={data} setCategory={setCategory} category={category} setItems={setItems} items={items} />
+      {(!loading && items && items.length > 0) && (
         <div className='shop-gallery'>
-          {data.items.map((item, index) => (
+          {items.map((item, index) => (
             <a key={index} className="item" href="#"  onClick={() => openModal(item)}>
               <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
                 {(item.sold == 1) && <div className="sold">Sold</div>}

@@ -3,8 +3,8 @@
     {
       "id": 1,
       "name": "Teachers Apron",
-      "price": 50,
-      "sold": 0,
+      "price": 60,
+      "sold": 1,
       "category": "Aprons",
       "images": [
         "shop-images/aprons/apron-1.jpeg",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "name": "Teachers Apron",
-      "price": 40,
+      "price": 60,
       "sold": 1,
       "category": "Aprons",
       "images": [
@@ -31,7 +31,7 @@
       "price": 60,
       "sold": 0,
       "category": "Aprons",
-      "paypal": "https://www.paypal.com/ncp/payment/ZDVVX78X2CPJ4",
+      "paypal": "https://www.paypal.com/ncp/payment/K39RAC8CXHGJ6",
       "images": [
         "shop-images/aprons/apron-7.jpeg",
         "shop-images/aprons/apron-8.jpeg",
