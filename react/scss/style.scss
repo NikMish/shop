@@ -174,3 +174,58 @@ h2 .sold {
     background-size: 22px;
   }
 }
+
+.filter {
+  position: relative;
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 1rem;
+    margin: 0 0.5rem 0 2rem;
+
+    input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 1rem;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 0.6rem;
+      width: 0.6rem;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(1rem);
+      -ms-transform: translateX(1rem);
+      transform: translateX(1rem);
+    }
+  }
+}

@@ -61,7 +61,11 @@ export default function Filter(props) {
         </select>
         
         <label>
-          <input type="checkbox" id="sold" name="sold" onChange={handleCheck} /> Hide sold staff
+          <span className='switch'>
+            <input type="checkbox" id="sold" name="sold" onChange={handleCheck} /> 
+            <span class="slider"></span>
+          </span>
+          Hide sold staff
         </label>
       </div>
     </>
