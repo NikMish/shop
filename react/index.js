@@ -17,7 +17,6 @@ const ShopApp = () => {
   const [loading, setLoading] = useState(true);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState({});
-  const [category, setCategory] = useState('all');
 
   const customStyles = {
     content: {
@@ -67,10 +66,10 @@ const ShopApp = () => {
     <div className='shop-app'>
     {loading && <div>Loading...</div>}
     <>
-      <Filter data={data} setCategory={setCategory} category={category} setItems={setItems} items={items} />
+      <Filter data={data} setItems={setItems} items={items} />
       {(!loading && items && items.length > 0) && (
         <div className='shop-gallery'>
-          {items.map((item, index) => (
+          {items.sort((a, b) => a.id < b.id ? 1 : -1).map((item, index) => (
             <a key={index} className="item" href="#"  onClick={() => openModal(item)}>
               <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
                 {(item.sold == 1) && <div className="sold">Sold</div>}

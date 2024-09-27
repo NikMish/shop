@@ -135,24 +135,37 @@ function Filter(props) {
     _useState2 = _slicedToArray(_useState, 2),
     filterList = _useState2[0],
     setFilterList = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all'),
     _useState4 = _slicedToArray(_useState3, 2),
-    newData = _useState4[0],
-    setNewData = _useState4[1];
+    category = _useState4[0],
+    setCategory = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    soldFilter = _useState6[0],
+    setSoldFilter = _useState6[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var filteredItems = [];
+
     // Filter items by category.
-    console.log(props.category);
-    if (props.items && props.items.length > 0) {
-      console.log('-all', props.category);
-      if (props.category !== 'all') {
-        props.setItems(props.data.items.filter(function (item) {
-          return item.category === props.category;
-        }));
+    if (props.data.items && props.data.items.length > 0) {
+      // Filter by category.
+      if (category !== 'all') {
+        filteredItems = props.data.items.filter(function (item) {
+          return item.category === category;
+        });
       } else {
-        props.setItems(props.data.items);
+        filteredItems = props.data.items;
       }
+
+      // Filter by sold.
+      if (soldFilter == true) {
+        filteredItems = filteredItems.filter(function (item) {
+          return item.sold === 0;
+        });
+      }
+      props.setItems(filteredItems);
     }
-  }, [props.category]);
+  }, [category, soldFilter]);
 
   // Build filter list.
   if (props.data.items && props.data.items.length > 0) {
@@ -161,9 +174,14 @@ function Filter(props) {
     });
   }
   var handleSelect = function handleSelect(e) {
-    // if (e.target.value != 'all') {
-    props.setCategory(e.target.value);
-    // }
+    setCategory(e.target.value);
+  };
+  var handleCheck = function handleCheck(e) {
+    if (e.target.checked === true) {
+      setSoldFilter(true);
+    } else {
+      setSoldFilter(false);
+    }
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "filter"
@@ -178,12 +196,12 @@ function Filter(props) {
       key: index,
       value: item
     }, item);
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "checkbox",
     id: "sold",
     name: "sold",
-    value: "sold"
-  }), " Hide sold staff"));
+    onChange: handleCheck
+  }), " Hide sold staff")));
 }
 
 /***/ }),
@@ -52896,10 +52914,6 @@ var ShopApp = function ShopApp() {
     _useState14 = _slicedToArray(_useState13, 2),
     currentItem = _useState14[0],
     setCurrentItem = _useState14[1];
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all'),
-    _useState16 = _slicedToArray(_useState15, 2),
-    category = _useState16[0],
-    setCategory = _useState16[1];
   var customStyles = {
     content: {
       top: '50%',
@@ -52942,13 +52956,13 @@ var ShopApp = function ShopApp() {
     className: "shop-app"
   }, loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Loading..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_filter__WEBPACK_IMPORTED_MODULE_5__["default"], {
     data: data,
-    setCategory: setCategory,
-    category: category,
     setItems: setItems,
     items: items
   }), !loading && items && items.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "shop-gallery"
-  }, items.map(function (item, index) {
+  }, items.sort(function (a, b) {
+    return a.id < b.id ? 1 : -1;
+  }).map(function (item, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
       key: index,
       className: "item",

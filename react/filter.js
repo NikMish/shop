@@ -1,25 +1,32 @@
 import React, {useState, useEffect} from 'react';
 
 export default function Filter(props) {
-
   const [filterList, setFilterList] = useState([]);
-  const [newData, setNewData] = useState([]);
+  const [category, setCategory] = useState('all');
+  const [soldFilter, setSoldFilter] = useState(false);
 
   useEffect(() => {
-    // Filter items by category.
-    console.log(props.category);
-    if (props.items && props.items.length > 0) {
-        console.log('-all', props.category);
+    let filteredItems = [];
 
-      if (props.category !== 'all') {
-        props.setItems(props.data.items.filter((item) => item.category === props.category));
+    // Filter items by category.
+    if (props.data.items && props.data.items.length > 0) { 
+      
+      // Filter by category.
+      if (category !== 'all') {
+        filteredItems = props.data.items.filter((item) => item.category === category);
       }
       else {
-        props.setItems(props.data.items);
+        filteredItems = props.data.items;
       }
-      
+
+      // Filter by sold.
+      if (soldFilter == true) {
+        filteredItems = filteredItems.filter((item) => item.sold === 0);
+      }
+      props.setItems(filteredItems);
+
     }
-  }, [props.category]);
+  }, [category, soldFilter]);
 
   // Build filter list.
   if (props.data.items && props.data.items.length > 0) {   
@@ -30,9 +37,16 @@ export default function Filter(props) {
   }
 
   const handleSelect = (e) => {
-    // if (e.target.value != 'all') {
-      props.setCategory(e.target.value);
-    // }
+    setCategory(e.target.value);
+  }
+
+  const handleCheck = (e) => {
+    if (e.target.checked === true) {
+      setSoldFilter(true);
+    }
+    else {
+      setSoldFilter(false);
+    }
   }
 
   return (
@@ -46,7 +60,9 @@ export default function Filter(props) {
           ))}
         </select>
         
-        <input type="checkbox" id="sold" name="sold" value="sold" /> Hide sold staff
+        <label>
+          <input type="checkbox" id="sold" name="sold" onChange={handleCheck} /> Hide sold staff
+        </label>
       </div>
     </>
   );
