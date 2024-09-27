@@ -610,7 +610,7 @@ button.swiper-pagination-bullet {
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
-    padding: 0 10px;
+    padding: 0 1rem;
   }
 }
 
