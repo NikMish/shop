@@ -767,13 +767,29 @@ h2 .sold {
 .filter {
   position: relative;
   margin-bottom: 0.5rem;
+  text-align: center;
+}
+.filter > div {
+  display: inline-block;
+  margin: 0 1.5rem 0.5rem 0;
+}
+@media screen and (max-width: 400px) {
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filter > div {
+    width: 100%;
+    margin: 0 0 0.5rem 0;
+  }
 }
 .filter .switch {
   position: relative;
   display: inline-block;
   width: 2rem;
   height: 1rem;
-  margin: 0 0.5rem 0 2rem;
+  margin-right: 0.5rem;
 }
 .filter .switch input {
   display: none;
@@ -781,10 +797,11 @@ h2 .sold {
 .filter .switch .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
+  top: 1px;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 20px;
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -793,8 +810,8 @@ h2 .sold {
 .filter .switch .slider:before {
   position: absolute;
   content: "";
-  height: 0.6rem;
-  width: 0.6rem;
+  height: 13px;
+  width: 13px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -809,9 +826,9 @@ h2 .sold {
   box-shadow: 0 0 1px #2196F3;
 }
 .filter .switch input:checked + .slider:before {
-  -webkit-transform: translateX(1rem);
-  -ms-transform: translateX(1rem);
-  transform: translateX(1rem);
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
 }
 .filter .select-container {
   display: inline-block;

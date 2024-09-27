@@ -52,24 +52,25 @@ export default function Filter(props) {
   return (
     <>
       <div className="filter">
-        Show: 
         <div className="select-container">
           <div class="select">
             <select name="filter" id="filter" onChange={handleSelect}>
-              <option value="all">All</option>
+              <option value="all">Show all</option>
               {filterList.map((item, index) => (
                 <option key={index} value={item}>{item}</option>
               ))}
             </select>
           </div>
         </div>
-        <label>
-          <span className='switch'>
-            <input type="checkbox" id="sold" name="sold" onChange={handleCheck} /> 
-            <span class="slider"></span>
-          </span>
-          Hide sold staff
-        </label>
+        <div>
+          <label>
+            <span className='switch'>
+              <input type="checkbox" id="sold" name="sold" onChange={handleCheck} /> 
+              <span class="slider"></span>
+            </span>
+            Hide sold staff
+          </label>
+        </div>
       </div>
     </>
   );
