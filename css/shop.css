@@ -833,6 +833,7 @@ h2 .sold {
 .filter .select-container {
   display: inline-block;
   margin-left: 0.2rem;
+  width: auto;
 }
 .filter select {
   appearance: none;
