@@ -856,11 +856,7 @@ h2 .sold {
   grid-template-areas: "select";
   align-items: center;
   position: relative;
-  min-width: 15ch;
-  max-width: 30ch;
-  border: 1px solid #333;
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
+  width: 5rem;
   font-size: 1rem;
   cursor: pointer;
   line-height: 1;
