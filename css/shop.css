@@ -937,4 +937,12 @@ nav ul li a.active {
   border-bottom: 1px dotted #000;
 }
 
+.display-item {
+  position: relative;
+}
+.display-item img {
+  width: 100%;
+  height: auto;
+}
+
 /*# sourceMappingURL=shop.css.map*/
