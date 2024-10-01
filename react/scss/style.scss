@@ -42,10 +42,14 @@ p, li {
   margin-bottom: 3rem;
 }
 
+.content {
+  padding: 0 1rem;
+}
+
 .shop-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 1rem;
+  gap: 3rem;
 
   .item {
     position: relative;
@@ -67,12 +71,23 @@ p, li {
       transition: all 0.3s;
     }
   }
+
+  > div a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .item-name {
+    padding: 1rem 0;
+  }
 }
 
 
 .shop-gallery .item-image {
   position: relative;
-  width: 15rem;
   height: 15rem;
   background-repeat: no-repeat;
   background-size: cover;

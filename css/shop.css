@@ -633,10 +633,14 @@ p, li {
   margin-bottom: 3rem;
 }
 
+.content {
+  padding: 0 1rem;
+}
+
 .shop-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 1rem;
+  gap: 3rem;
 }
 .shop-gallery .item {
   position: relative;
@@ -658,10 +662,18 @@ p, li {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
 }
+.shop-gallery > div a {
+  text-decoration: none;
+}
+.shop-gallery > div a:hover {
+  text-decoration: underline;
+}
+.shop-gallery .item-name {
+  padding: 1rem 0;
+}
 
 .shop-gallery .item-image {
   position: relative;
-  width: 15rem;
   height: 15rem;
   background-repeat: no-repeat;
   background-size: cover;

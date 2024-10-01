@@ -3,6 +3,7 @@ import useFetchData from './fetcher';
 import Modal from 'react-modal';
 import Carousel from './carousel';
 import Filter from './filter';
+import { Link } from 'react-router-dom';
 
 import './scss/style.scss';
 
@@ -69,18 +70,22 @@ const ShopApp = () => {
       {(!loading && items && items.length > 0) && (
         <div className='shop-gallery'>
           {items.sort((a, b) => a.id < b.id ? 1 : -1).map((item, index) => (
-            <a key={index} className="item" href="#"  onClick={() => openModal(item)}>
-              <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
-                {(item.sold == 1) && <div className="sold">Sold</div>}
-              </div>
-              <div className="item-description">
-                <h2>{item.name}</h2>
-              </div>
+            // <a className="item" href="#"  onClick={() => openModal(item)}>
+            <div key={index}>
+              <Link to={`/shop/item/${item.id}`}>
+                <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
+                  {(item.sold == 1) && <div className="sold">Sold</div>}
+                </div>
+                <div className="item-name">
+                  {item.name}
+                </div>
+              </Link>
               <div className="item-price">
               $ {item.price}
                 {(item.paypal) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
               </div>
-            </a>    
+            </div>
+            // </a>    
           ))}
         </div>
       )}
