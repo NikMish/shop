@@ -284,7 +284,7 @@ h2 .sold {
     line-height: inherit;
   
     // Stack above custom arrow
-    z-index: 1;
+    z-index: 0;
   
     // Remove dropdown arrow in IE10 & IE11
     // @link https://www.filamentgroup.com/lab/select-css.html
