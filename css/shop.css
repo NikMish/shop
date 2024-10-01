@@ -602,8 +602,20 @@ button.swiper-pagination-bullet {
   color: #333;
 }
 
+h2 {
+  font-size: 120%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
 strong {
   font-weight: bold;
+}
+
+p, li {
+  line-height: 1.5rem;
 }
 
 .container {
@@ -620,7 +632,7 @@ strong {
 
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .shop-gallery {
@@ -887,6 +899,30 @@ h2 .sold {
   bottom: -1px;
   border: 2px solid var(--select-focus);
   border-radius: inherit;
+}
+
+nav {
+  position: relative;
+  margin-bottom: 2rem;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  margin: 0 0.5rem;
+}
+nav ul li a {
+  text-decoration: none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+nav ul li a.active {
+  border-bottom: 1px dotted #000;
 }
 
 /*# sourceMappingURL=shop.css.map*/

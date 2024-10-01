@@ -1,11 +1,9 @@
 import React from 'react';
-import Navigation from './nav';
 
 const About = () => {
 
   return (
 <>
-  <Navigation />
   <h2>Crafting a Passionate Life</h2>
 
   <p>As a lifelong crafter, I've always been drawn to the beauty and versatility of handmade items. From the tactile pleasure of working with different materials to the satisfaction of creating something truly unique, crafting has been my constant companion.</p>

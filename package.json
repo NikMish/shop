@@ -5,8 +5,6 @@
   "homepage": "https://misharev.com",
   "main": "index.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -w",
     "build:prod": "webpack --mode development"

@@ -11,8 +11,20 @@ $mobil-sm: 400px;
   color: $font-color;
 }
 
+h2 {
+  font-size: 120%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
 strong {
   font-weight: bold;
+}
+
+p, li {
+  line-height: 1.5rem;
 }
 
 .container {
@@ -29,7 +41,7 @@ strong {
 
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .shop-gallery {
@@ -328,5 +340,35 @@ h2 .sold {
     bottom: -1px;
     border: 2px solid var(--select-focus);
     border-radius: inherit;
+  }
+}
+
+nav {
+  position: relative;
+  margin-bottom: 2rem;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0 0.5rem;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.active {
+          // text-decoration: dotted;
+          border-bottom: 1px dotted #000;
+        }
+      }
+    }
   }
 }

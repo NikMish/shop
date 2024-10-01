@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Navigation from './nav';
 import useFetchData from './fetcher';
 import Modal from 'react-modal';
 import Carousel from './carousel';
@@ -66,7 +65,6 @@ const ShopApp = () => {
     <div className='shop-app'>
     {loading && <div>Loading...</div>}
     <>
-      <Navigation />
       <Filter data={data} setItems={setItems} items={items} />
       {(!loading && items && items.length > 0) && (
         <div className='shop-gallery'>
