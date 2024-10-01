@@ -1,110 +1,25 @@
 import React, {useEffect, useState} from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ReactDOM from "react-dom/client";
-import useFetchData from './fetcher';
-import Modal from 'react-modal';
-import Carousel from './carousel';
-import Filter from './filter';
+import ShopApp from './shop';
+import About from './about';
+import Navigation from './nav';
+import PageNotFound from './404';
 
 import './scss/style.scss';
 
 
-const ShopApp = () => {
-  const fetchUrl = 'data.json';
-  const [fetch, setFetch] = useState(fetchUrl);
-  const [isReady, setIsReady] = useState(false);
-  const [data, setData] = useState([]);
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [currentItem, setCurrentItem] = useState({});
-
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      width: '80%',
-      height: '80%',
-      transform: 'translate(-50%, -50%)',
-    },
-    overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    },
-  };
-  Modal.setAppElement('#my-shop-app');
-
-  useEffect(() => {
-    // Fetch data.
-    // if (isReady) {
-      useFetchData(fetch, setData, setLoading);
-    // }
-  }, []);
-
-  useEffect(() => {
-    if (data.items && data.items.length > 0) {
-      setItems(data.items);
-    }
-  }, [data]);
-
-  function openModal(item) {
-    setCurrentItem(item);
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
+const App = () => {
 
   return (
-    <div className='shop-app'>
-    {loading && <div>Loading...</div>}
-    <>
-      <Filter data={data} setItems={setItems} items={items} />
-      {(!loading && items && items.length > 0) && (
-        <div className='shop-gallery'>
-          {items.sort((a, b) => a.id < b.id ? 1 : -1).map((item, index) => (
-            <a key={index} className="item" href="#"  onClick={() => openModal(item)}>
-              <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
-                {(item.sold == 1) && <div className="sold">Sold</div>}
-              </div>
-              <div className="item-description">
-                <h2>{item.name}</h2>
-              </div>
-              <div className="item-price">
-              $ {item.price}
-                {(item.paypal) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
-              </div>
-            </a>    
-          ))}
-        </div>
-      )}
-      {/* Modal content */}
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Overview"
-      >
-        <h2>
-          {currentItem.name}
-          {(currentItem.sold == 1) && <div className="sold"> - Sold</div>}
-          {(currentItem.description) && <div className="description">{currentItem.description}</div>}
-        </h2>
-        <button className='close-modal' onClick={closeModal}>X</button>
-        <Carousel item={currentItem} />
-         {(currentItem.paypal) && <div className="paypal-button"><a href={currentItem.paypal}>Purchase</a></div>}
-          
-      </Modal>
-    </>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<ShopApp />}  />
+        <Route path="/shop" element={<ShopApp />}  />
+        <Route path="/about" element={<About />}  />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
@@ -114,7 +29,7 @@ if (appRoot) {
   const root = ReactDOM.createRoot(appRoot);
   root.render(
     <React.StrictMode>
-      <ShopApp />
+      <App />
     </React.StrictMode>
   );
 };

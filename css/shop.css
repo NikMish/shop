@@ -602,6 +602,10 @@ button.swiper-pagination-bullet {
   color: #333;
 }
 
+strong {
+  font-weight: bold;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;

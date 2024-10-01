@@ -53,7 +53,7 @@ export default function Filter(props) {
     <>
       <div className="filter">
         <div className="select-container">
-          <div class="select">
+          <div className="select">
             <select name="filter" id="filter" onChange={handleSelect}>
               <option value="all">Show all</option>
               {filterList.map((item, index) => (
@@ -66,7 +66,7 @@ export default function Filter(props) {
           <label>
             <span className='switch'>
               <input type="checkbox" id="sold" name="sold" onChange={handleCheck} /> 
-              <span class="slider"></span>
+              <span className="slider"></span>
             </span>
             Hide sold staff
           </label>
