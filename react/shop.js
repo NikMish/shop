@@ -82,7 +82,7 @@ const ShopApp = () => {
               </Link>
               <div className="item-price">
               $ {item.price}
-                {(item.paypal) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
+                {(item.paypal && item.sold != 1) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
               </div>
             </div>
             // </a>    

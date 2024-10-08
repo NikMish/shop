@@ -5242,7 +5242,7 @@ var DisplayItem = function DisplayItem() {
     className: "sold"
   }, " - Sold"), item.description && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "description"
-  }, item.description)), item.paypal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, item.description)), item.paypal && item.sold != 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "paypal-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: item.paypal
@@ -5572,7 +5572,7 @@ var ShopApp = function ShopApp() {
         className: "item-name"
       }, item.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "item-price"
-      }, "$ ", item.price, item.paypal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      }, "$ ", item.price, item.paypal && item.sold != 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "paypal-button"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
         href: item.paypal

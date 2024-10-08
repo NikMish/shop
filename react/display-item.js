@@ -41,7 +41,7 @@ const DisplayItem = () => {
           {(item.sold == 1) && <div className="sold"> - Sold</div>}
           {(item.description) && <div className="description">{item.description}</div>}
         </h2>
-        {(item.paypal) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
+        {(item.paypal && item.sold !=1) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
         
       </div>
     )}
