@@ -6,7 +6,6 @@ import DisplayItem from './display-item';
 import About from './about';
 import Navigation from './nav';
 import PageNotFound from './404';
-import Market from './market';
 
 import './scss/style.scss';
 
@@ -21,7 +20,6 @@ const App = () => {
         <Route path="/shop" element={<ShopApp />}  />
         <Route path="/shop/item/:id" element={<DisplayItem />}  />
         <Route path="/about" element={<About />}  />
-        <Route path="/market" element={<Market />}  />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
