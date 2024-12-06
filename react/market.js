@@ -4,29 +4,29 @@ const Market = () => {
 
   return (
 <>
-  <h2>Crafting a Passionate Life</h2>
+  <h2>Upcycle Your Style</h2>
 
-  <p>As a lifelong crafter, I've always been drawn to the beauty and versatility of handmade items. From the tactile pleasure of working with different materials to the satisfaction of creating something truly unique, crafting has been my constant companion.</p>
+  <p>Give your wardrobe a sustainable boost with our unique, upcycled denim aprons and bags. Each piece is handcrafted from discarded jeans, reducing fashion waste and adding a touch of vintage charm to your everyday style.</p>
 
-  <p>Inspired by a desire to reduce waste and promote sustainable living, I've turned my passion into a purpose. My upcycled bags, aprons, and accessories are not just products; they're a testament to my belief in the power of creativity and conscious consumption.</p>
-
-  <p>Each piece I create is a labor of love, infused with my personal touch and a commitment to quality. Whether you're seeking a functional accessory or a one-of-a-kind gift, I hope my creations bring joy and inspiration to your life.</p>
-
-  <h2>Crafting Custom and Personalized Creations</h2>
-
-  <p>In addition to my upcycled offerings, I also specialize in creating custom and personalized items. Whether you have a specific vision in mind or need help bringing an idea to life, I'm here to collaborate with you.</p>
-
-  <h3>Here are some examples of custom and personalized options:</h3>
-
+  <p><strong>Perfect for:</strong></p>
   <ul>
-    <li><strong>Personalized embroidery:</strong> Add your name, initials, or a special message to any of my items.</li>
-    <li><strong>Custom colors and fabrics:</strong> Choose your preferred colors and materials for a truly unique piece.</li>
-    <li><strong>Bespoke designs:</strong> Work with me to create a one-of-a-kind design that reflects your style and preferences.</li>
+    <li>Home chefs</li>
+    <li>Gardeners</li>
+    <li>Artists</li>
+    <li>Fashion-forward individuals</li>
   </ul>
-  <p>
-  To request a custom or personalized item, please <a href="mailto:misharev@hotmail.com">contact me</a> with your specific requirements. We can discuss your ideas, materials, and timeline to ensure your complete satisfaction.</p>
+
+  <h3>Grab your stylish, eco-friendly apron for just $50 or a bag starting at $60!</h3>
+
 
   <p>Thank you for supporting handmade and sustainable living!</p>
+
+  <style>.pp-CS5MYNJT3ZXH6{text-align:center;border:none;border-radius:1.5rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+  <form action="https://www.paypal.com/ncp/payment/CS5MYNJT3ZXH6" method="post" target="_top" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+  <input class="pp-CS5MYNJT3ZXH6" type="submit" value="Buy Now" />
+  <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+  <section> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+  </form>
 </>
   );
 
