@@ -2,44 +2,101 @@
   "items": [
     {
       "id": 1,
-      "name": "Teachers Apron",
+      "name": "Teachers Apron 1",
       "price": 60,
       "sold": 1,
       "category": "Aprons",
       "images": [
-        "shop-images/aprons/apron-1.jpeg",
-        "shop-images/aprons/apron-2.jpeg",
-        "shop-images/aprons/apron-3.jpeg",
-        "shop-images/aprons/apron-4.jpeg"
+        "shop-images/aprons/apron_21.jpg",
+        "shop-images/aprons/apron_22.jpg",
+        "shop-images/aprons/apron_23.jpg"
       ]
     },
     {
       "id": 2,
-      "name": "Teachers Apron",
+      "name": "Teachers Apron 2",
       "price": 60,
       "sold": 1,
       "category": "Aprons",
       "images": [
-        "shop-images/aprons/apron-5.jpeg",
-        "shop-images/aprons/apron-6.jpeg"
+        "shop-images/aprons/apron_25.jpg",
+        "shop-images/aprons/apron_24.jpg",
+        "shop-images/aprons/apron_38.jpg"
       ]
     },
     {
       "id": 3,
-      "name": "Teachers Apron",
+      "name": "Teachers Apron 4",
       "description": "This is DIY one of a kind teachers or gardening apron made out of denim jeans Features five pockets and a four 1/2 d-rings for accessories. Easy to put on and off with plastic buckle. Size is 25.5\" wide, 14.5\" tall. Heavy duty apron.",
       "price": 60,
       "sold": 1,
       "category": "Aprons",
       "paypal": "https://www.paypal.com/ncp/payment/K39RAC8CXHGJ6",
       "images": [
-        "shop-images/aprons/apron-7.jpeg",
-        "shop-images/aprons/apron-8.jpeg",
-        "shop-images/aprons/large-apron-b-3.jpeg"
+        "shop-images/aprons/apron_28.jpg",
+        "shop-images/aprons/apron_33.jpg",
+        "shop-images/aprons/apron_41.jpg"
       ]
     },
     {
       "id": 4,
+      "name": "Teachers Apron 5",
+      "description": "This is DIY one of a kind teachers or gardening apron made out of denim jeans Features five pockets and a four 1/2 d-rings for accessories. Easy to put on and off with plastic buckle. Size is 25.5\" wide, 14.5\" tall. Heavy duty apron.",
+      "price": 60,
+      "sold": 1,
+      "category": "Aprons",
+      "paypal": "https://www.paypal.com/ncp/payment/K39RAC8CXHGJ6",
+      "images": [
+        "shop-images/aprons/apron_29.jpg",
+        "shop-images/aprons/apron_30.jpg",
+        "shop-images/aprons/apron_31.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Teachers Apron 6",
+      "description": "This is DIY one of a kind teachers or gardening apron made out of denim jeans Features five pockets and a four 1/2 d-rings for accessories. Easy to put on and off with plastic buckle. Size is 25.5\" wide, 14.5\" tall. Heavy duty apron.",
+      "price": 60,
+      "sold": 1,
+      "category": "Aprons",
+      "paypal": "https://www.paypal.com/ncp/payment/K39RAC8CXHGJ6",
+      "images": [
+        "shop-images/aprons/apron_34.jpg",
+        "shop-images/aprons/apron_40.jpg",
+        "shop-images/aprons/apron_32.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Teachers Apron 7",
+      "description": "This is DIY one of a kind teachers or gardening apron made out of denim jeans Features five pockets and a four 1/2 d-rings for accessories. Easy to put on and off with plastic buckle. Size is 25.5\" wide, 14.5\" tall. Heavy duty apron.",
+      "price": 60,
+      "sold": 1,
+      "category": "Aprons",
+      "paypal": "https://www.paypal.com/ncp/payment/K39RAC8CXHGJ6",
+      "images": [
+        "shop-images/aprons/apron_37.jpg",
+        "shop-images/aprons/apron_36.jpg",
+        "shop-images/aprons/apron_35.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Teachers Apron 8",
+      "description": "This is DIY one of a kind teachers or gardening apron made out of denim jeans Features five pockets and a four 1/2 d-rings for accessories. Easy to put on and off with plastic buckle. Size is 25.5\" wide, 14.5\" tall. Heavy duty apron.",
+      "price": 60,
+      "sold": 1,
+      "category": "Aprons",
+      "paypal": "https://www.paypal.com/ncp/payment/K39RAC8CXHGJ6",
+      "images": [
+        "shop-images/aprons/apron_42.jpg",
+        "shop-images/aprons/apron_39.jpg",
+        "shop-images/aprons/apron_26.jpg",
+        "shop-images/aprons/apron_27.jpg"
+      ]
+    },
+    {
+      "id": 8,
       "name": "Small shoulder bag with embroidery upcycled denim",
       "description": "This is DIY one of a kind hand bag made out of denim jeans. Has one internal pocket and two front and back jeans pockets. Has long adjustable shoulder strap. Size is 7\" wide, 9\" tall and 2.5\" deep",
       "price": 65,
@@ -54,7 +111,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 9,
       "name": "Denim shoulder patch work bag",
       "description": "This is DIY one of a kind medium size hand bag made out of denim jeans patches. Has three internal pockets and zipper on the top. Size is 12\" wide, 8\" tall and 5\" deep on the bottom.",
       "price": 114,
@@ -70,7 +127,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 10,
       "name": "Denim tote patch work bag",
       "description": "This is DIY one of a kind smallish size hand bag made out of denim jeans patches. Has internal pockets: one zipped pocket and two regular. Zipper on the top. Size is 9\" wide, 11\" tall and 4\" deep. The strap size is 10\" from shoulder to the bag.",
       "price": 89,
@@ -85,7 +142,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 11,
       "name": "Denim shoulder bag",
       "description": "This is DIY one of a kind small size hand bag made out of denim jeans patches. Has no internal pockets (forgot sorry). One side zipped pocket and zipper on the top. Size is 8\" wide, 9\" tall and 2\" deep. The strap size is 23\" from shoulder to the bag.",
       "price": 99,
