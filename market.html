@@ -17,6 +17,14 @@
   gtag('event', 'page_view', {
     page_title: 'Market Page'
   });
+
+  var payClick = () => {
+    gtag('event', 'click', {
+      event_category: 'PayPal button',
+      event_action: 'Click',
+      event_label: 'onSiteClick'
+  });
+  }
 </script>
 
 <body>
@@ -48,7 +56,7 @@
 
   <div class="paypal">
     <h3>Can't pay with cash? No problem!</h3>
-    <form action="https://www.paypal.com/ncp/payment/CS5MYNJT3ZXH6" method="post" target="_top" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+    <form action="https://www.paypal.com/ncp/payment/CS5MYNJT3ZXH6" method="post" target="_top" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;" onsubmit="payClick">
     <input class="pp-CS5MYNJT3ZXH6" type="submit" value="Pay Now" />
     <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
     <section> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
