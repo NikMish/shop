@@ -19,11 +19,13 @@
   });
 
   function payClick(e) {
+    e.preventDefault();
     gtag('event', 'click', {
       event_category: 'PayPal button',
       event_action: 'Click',
       event_label: 'onSiteClick'
-  });
+    });
+    e.target.submit();
   }
 </script>
 
