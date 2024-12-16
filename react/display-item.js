@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
 import useFetchData from './fetcher';
+import GADataLayer from './ga';
 
 const DisplayItem = () => {
   const { id } = useParams();
@@ -9,7 +10,6 @@ const DisplayItem = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [item, setItem] = useState({});
-  console.log(id);
 
   useEffect(() => {
     // Fetch data.
@@ -22,7 +22,22 @@ const DisplayItem = () => {
       setItem(data.items.find((item) => item.id == id));
     }
   }, [data]);
-  console.log(item);
+
+  useEffect (() => {
+    if (item.id) {
+      // GA menu tracking.
+      GADataLayer({
+        event: 'item_view',
+        item: {
+          'id': item.id,
+          'name': item.name,
+          'sold': item.sold,
+          'price': item.price
+        }
+      });
+    }
+  }, [item]);
+   
   
   return (
     <>

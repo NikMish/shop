@@ -11,12 +11,11 @@ import './scss/style.scss';
 
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <Navigation />
       <Routes>
-        <Route path="/" exact element={<ShopApp />}  />
+        <Route path="/" exact element={<ShopApp />} />
         <Route path="/shop" element={<ShopApp />}  />
         <Route path="/shop/item/:id" element={<DisplayItem />}  />
         <Route path="/about" element={<About />}  />
