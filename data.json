@@ -29,7 +29,7 @@
       "id": 2,
       "name": "Teachers Apron 2",
       "price": 60,
-      "sold": 0,
+      "sold": 1,
       "category": "Aprons",
       "images": [
         "shop-images/aprons/apron_25.jpg",
