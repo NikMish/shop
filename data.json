@@ -17,7 +17,7 @@
       "id": 1,
       "name": "Teachers Apron 1",
       "price": 60,
-      "sold": 0,
+      "sold": 1,
       "category": "Aprons",
       "images": [
         "shop-images/aprons/apron_21.jpg",
