@@ -142,17 +142,28 @@
     },
     {
       "id": 11,
-      "name": "Denim shoulder bag",
-      "description": "This is DIY one of a kind small size hand bag made out of denim jeans patches. Has no internal pockets (forgot sorry). One side zipped pocket and zipper on the top. Size is 8\" wide, 9\" tall and 2\" deep. The strap size is 23\" from shoulder to the bag.",
-      "price": 99,
-      "sold": 1,
-      "category": "Shoulder bags",
-      "paypal": "https://www.paypal.com/ncp/payment/BACEQYT9DZ5JA",
+      "name": "Ukraine Trident Keychain, leather",
+      "description": "This handcrafted genuine leather keychain is a symbol of Ukrainian spirit and resilience. The intricately detailed Trident is a testament to the strength and courage of the Ukrainian people. All proceeds directly support Ukrainian troops. Show your support with this stylish and meaningful accessory.",
+      "price": 10,
+      "sold": 0,
+      "category": "Keychains",
+      "paypal": "https://www.paypal.com/ncp/payment/SQPQFPMTSLKWN",
       "images": [
-        "shop-images/bags/sholder-patch-1.jpeg",
-        "shop-images/bags/sholder-patch-2.jpeg",
-        "shop-images/bags/sholder-patch-3.jpeg",
-        "shop-images/bags/sholder-patch-4.jpeg"
+        "shop-images/keychain/key-chain-ukr-v2.jpg",
+        "shop-images/keychain/key-chain-ukr-v2-1.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Ukraine Trident Keychain, plastic",
+      "description": "Support Ukraine with this unique 3D printed keychain! Crafted in the vibrant colors of the Ukrainian flag, this keychain features the iconic Trident symbol. All of the proceeds from each sale will be donated to support Ukrainian relief efforts. Show your solidarity and add a touch of Ukrainian spirit to your keys!",
+      "price": 5,
+      "sold": 0,
+      "category": "Keychains",
+      "paypal": "https://www.paypal.com/ncp/payment/B9PYDKUCGKJUG",
+      "images": [
+        "shop-images/keychain/key-chain-ukr-v3.jpg",
+        "shop-images/keychain/key-chain-ukr-v3-1.jpg"
       ]
     }
   ]
