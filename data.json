@@ -165,6 +165,21 @@
         "shop-images/keychain/key-chain-ukr-v3.jpg",
         "shop-images/keychain/key-chain-ukr-v3-1.jpg"
       ]
+    },
+    {
+      "id": 13,
+      "name": "Shoulder bug No. 10",
+      "description": "This is DIY one of a kind hand bag made out of denim jeans. Has two internal pocket and two front. Has long adjustable shoulder strap. Size is 10\" wide, 10.25\" tall and 2.5\" deep",
+      "price": 80,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/DWVGDZSHCZ93A",
+      "images": [
+        "shop-images/bags/IMG_6254-Medium.jpg",
+        "shop-images/bags/IMG_6255-Medium.jpg",
+        "shop-images/bags/IMG_6256-Medium.jpg",
+        "shop-images/bags/IMG_6257-Medium.jpg"
+      ]
     }
   ]
 }
