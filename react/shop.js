@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import useFetchData from './fetcher';
-import Modal from 'react-modal';
-import Carousel from './carousel';
 import Filter from './filter';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +13,6 @@ const ShopApp = () => {
   const [data, setData] = useState([]);
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [modalIsOpen, setIsOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState({});
 
   const customStyles = {
@@ -33,13 +30,9 @@ const ShopApp = () => {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
   };
-  Modal.setAppElement('#my-shop-app');
 
   useEffect(() => {
-    // Fetch data.
-    // if (isReady) {
-      useFetchData(fetch, setData, setLoading);
-    // }
+    useFetchData(fetch, setData, setLoading);
   }, []);
 
   useEffect(() => {
@@ -47,20 +40,6 @@ const ShopApp = () => {
       setItems(data.items);
     }
   }, [data]);
-
-  function openModal(item) {
-    setCurrentItem(item);
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   return (
     <div className='shop-app'>
@@ -70,7 +49,6 @@ const ShopApp = () => {
       {(!loading && items && items.length > 0) && (
         <div className='shop-gallery'>
           {items.sort((a, b) => a.id < b.id ? 1 : -1).map((item, index) => (
-            // <a className="item" href="#"  onClick={() => openModal(item)}>
             <div key={index}>
               <Link to={`/shop/item/${item.id}`}>
                 <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
@@ -84,29 +62,10 @@ const ShopApp = () => {
               $ {item.price}
                 {(item.paypal && item.sold != 1) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
               </div>
-            </div>
-            // </a>    
+            </div>  
           ))}
         </div>
       )}
-      {/* Modal content */}
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Overview"
-      >
-        <h2>
-          {currentItem.name}
-          {(currentItem.sold == 1) && <div className="sold"> - Sold</div>}
-          {(currentItem.description) && <div className="description">{currentItem.description}</div>}
-        </h2>
-        <button className='close-modal' onClick={closeModal}>X</button>
-        <Carousel item={currentItem} />
-         {(currentItem.paypal) && <div className="paypal-button"><a href={currentItem.paypal}>Purchase</a></div>}
-          
-      </Modal>
     </>
     </div>
   );
