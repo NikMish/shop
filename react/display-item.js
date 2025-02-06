@@ -13,7 +13,9 @@ const DisplayItem = () => {
 
   useEffect(() => {
     // Fetch data.
-    useFetchData(fetch, setData, setLoading);
+    if (loading) {
+      useFetchData(fetch, setData, setLoading);
+    }
   }, []);
 
   useEffect(() => {
@@ -39,29 +41,36 @@ const DisplayItem = () => {
   }, [item]);
    
   
-  return (
-    <>
-    {(!loading && item.name) && (
-      <div className="display-item">
-        <div className="gallery">
-          {item.images.map((image, index) => (
-            <div key={index}>
-              <img src={`../../${image}`} alt={`${item.name} - ${item.id}`} />
-            </div>
-          ))}
-        </div>
+  if (loading) {
+    return (
+      <div>Loading...</div>
+    );
+  } 
+  else {
+    return (
+      <>
+      {(!loading && item.name) && (
+        <div className="display-item">
+          <div className="gallery">
+            {item.images.map((image, index) => (
+              <div key={index}>
+                <img src={`../../${image}`} alt={`${item.name} - ${item.id}`} />
+              </div>
+            ))}
+          </div>
 
-        <h2>
-          {item.name}
-          {(item.sold == 1) && <div className="sold"> - Sold</div>}
-          {(item.description) && <div className="description">{item.description}</div>}
-        </h2>
-        {(item.paypal && item.sold !=1) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
-        
-      </div>
-    )}
-  </>
-  );
+          <h2>
+            {item.name}
+            {(item.sold == 1) && <div className="sold"> - Sold</div>}
+            {(item.description) && <div className="description">{item.description}</div>}
+          </h2>
+          {(item.paypal && item.sold !=1) && <div className="paypal-button"><a href={item.paypal}>Purchase</a></div>}
+          
+        </div>
+      )}
+    </>
+    );
+  }
 }
 
 export default DisplayItem;
