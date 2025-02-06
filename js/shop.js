@@ -52,7 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   stripBasename: () => (/* binding */ stripBasename)
 /* harmony export */ });
 /**
- * @remix-run/router v1.21.0
+ * @remix-run/router v1.22.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -1451,6 +1451,7 @@ function createRouter(init) {
   // SSR did the initial scroll restoration.
   let initialScrollRestored = init.hydrationData != null;
   let initialMatches = matchRoutes(dataRoutes, init.history.location, basename);
+  let initialMatchesIsFOW = false;
   let initialErrors = null;
   if (initialMatches == null && !patchRoutesOnNavigationImpl) {
     // If we do not match a user-provided-route, fall back to the root
@@ -1489,6 +1490,7 @@ function createRouter(init) {
     if (future.v7_partialHydration) {
       let fogOfWar = checkFogOfWar(null, dataRoutes, init.history.location.pathname);
       if (fogOfWar.active && fogOfWar.matches) {
+        initialMatchesIsFOW = true;
         initialMatches = fogOfWar.matches;
       }
     }
@@ -1713,6 +1715,13 @@ function createRouter(init) {
         }
       });
     }
+    // Remove any lingering deleted fetchers that have already been removed
+    // from state.fetchers
+    deletedFetchers.forEach(key => {
+      if (!state.fetchers.has(key) && !fetchControllers.has(key)) {
+        deletedFetchersKeys.push(key);
+      }
+    });
     // Iterate over a local copy so that if flushSync is used and we end up
     // removing and adding a new subscriber due to the useCallback dependencies,
     // we don't get ourselves into a loop calling the new subscriber immediately
@@ -1725,6 +1734,10 @@ function createRouter(init) {
     if (future.v7_fetcherPersist) {
       completedFetchers.forEach(key => state.fetchers.delete(key));
       deletedFetchersKeys.forEach(key => deleteFetcher(key));
+    } else {
+      // We already called deleteFetcher() on these, can remove them from this
+      // Set now that we've handed the keys off to the data layer
+      deletedFetchersKeys.forEach(key => deletedFetchers.delete(key));
     }
   }
   // Complete a navigation returning the state.navigation back to the IDLE_NAVIGATION
@@ -1959,7 +1972,9 @@ function createRouter(init) {
     pendingViewTransitionEnabled = (opts && opts.enableViewTransition) === true;
     let routesToUse = inFlightDataRoutes || dataRoutes;
     let loadingNavigation = opts && opts.overrideNavigation;
-    let matches = matchRoutes(routesToUse, location, basename);
+    let matches = opts != null && opts.initialHydration && state.matches && state.matches.length > 0 && !initialMatchesIsFOW ?
+    // `matchRoutes()` has already been called if we're in here via `router.initialize()`
+    state.matches : matchRoutes(routesToUse, location, basename);
     let flushSync = (opts && opts.flushSync) === true;
     let fogOfWar = checkFogOfWar(matches, routesToUse, location.pathname);
     if (fogOfWar.active && fogOfWar.matches) {
@@ -2468,7 +2483,7 @@ function createRouter(init) {
     let abortController = new AbortController();
     let fetchRequest = createClientSideRequest(init.history, path, abortController.signal, submission);
     if (isFogOfWar) {
-      let discoverResult = await discoverRoutes(requestMatches, path, fetchRequest.signal);
+      let discoverResult = await discoverRoutes(requestMatches, new URL(fetchRequest.url).pathname, fetchRequest.signal);
       if (discoverResult.type === "aborted") {
         return;
       } else if (discoverResult.type === "error") {
@@ -2645,7 +2660,7 @@ function createRouter(init) {
     let abortController = new AbortController();
     let fetchRequest = createClientSideRequest(init.history, path, abortController.signal);
     if (isFogOfWar) {
-      let discoverResult = await discoverRoutes(matches, path, fetchRequest.signal);
+      let discoverResult = await discoverRoutes(matches, new URL(fetchRequest.url).pathname, fetchRequest.signal);
       if (discoverResult.type === "aborted") {
         return;
       } else if (discoverResult.type === "error") {
@@ -2916,13 +2931,11 @@ function createRouter(init) {
     });
   }
   function getFetcher(key) {
-    if (future.v7_fetcherPersist) {
-      activeFetchers.set(key, (activeFetchers.get(key) || 0) + 1);
-      // If this fetcher was previously marked for deletion, unmark it since we
-      // have a new instance
-      if (deletedFetchers.has(key)) {
-        deletedFetchers.delete(key);
-      }
+    activeFetchers.set(key, (activeFetchers.get(key) || 0) + 1);
+    // If this fetcher was previously marked for deletion, unmark it since we
+    // have a new instance
+    if (deletedFetchers.has(key)) {
+      deletedFetchers.delete(key);
     }
     return state.fetchers.get(key) || IDLE_FETCHER;
   }
@@ -2937,21 +2950,28 @@ function createRouter(init) {
     fetchLoadMatches.delete(key);
     fetchReloadIds.delete(key);
     fetchRedirectIds.delete(key);
-    deletedFetchers.delete(key);
+    // If we opted into the flag we can clear this now since we're calling
+    // deleteFetcher() at the end of updateState() and we've already handed the
+    // deleted fetcher keys off to the data layer.
+    // If not, we're eagerly calling deleteFetcher() and we need to keep this
+    // Set populated until the next updateState call, and we'll clear
+    // `deletedFetchers` then
+    if (future.v7_fetcherPersist) {
+      deletedFetchers.delete(key);
+    }
     cancelledFetcherLoads.delete(key);
     state.fetchers.delete(key);
   }
   function deleteFetcherAndUpdateState(key) {
-    if (future.v7_fetcherPersist) {
-      let count = (activeFetchers.get(key) || 0) - 1;
-      if (count <= 0) {
-        activeFetchers.delete(key);
-        deletedFetchers.add(key);
-      } else {
-        activeFetchers.set(key, count);
+    let count = (activeFetchers.get(key) || 0) - 1;
+    if (count <= 0) {
+      activeFetchers.delete(key);
+      deletedFetchers.add(key);
+      if (!future.v7_fetcherPersist) {
+        deleteFetcher(key);
       }
     } else {
-      deleteFetcher(key);
+      activeFetchers.set(key, count);
     }
     updateState({
       fetchers: new Map(state.fetchers)
@@ -3175,6 +3195,7 @@ function createRouter(init) {
       let localManifest = manifest;
       try {
         await patchRoutesOnNavigationImpl({
+          signal,
           path: pathname,
           matches: partialMatches,
           patch: (routeId, children) => {
@@ -4387,17 +4408,23 @@ async function convertDataStrategyResultToDataResult(dataStrategyResult) {
   }
   if (type === ResultType.error) {
     if (isDataWithResponseInit(result)) {
-      var _result$init2;
+      var _result$init3, _result$init4;
       if (result.data instanceof Error) {
-        var _result$init;
+        var _result$init, _result$init2;
         return {
           type: ResultType.error,
           error: result.data,
-          statusCode: (_result$init = result.init) == null ? void 0 : _result$init.status
+          statusCode: (_result$init = result.init) == null ? void 0 : _result$init.status,
+          headers: (_result$init2 = result.init) != null && _result$init2.headers ? new Headers(result.init.headers) : undefined
         };
       }
       // Convert thrown data() to ErrorResponse instances
-      result = new ErrorResponseImpl(((_result$init2 = result.init) == null ? void 0 : _result$init2.status) || 500, undefined, result.data);
+      return {
+        type: ResultType.error,
+        error: new ErrorResponseImpl(((_result$init3 = result.init) == null ? void 0 : _result$init3.status) || 500, undefined, result.data),
+        statusCode: isRouteErrorResponse(result) ? result.status : undefined,
+        headers: (_result$init4 = result.init) != null && _result$init4.headers ? new Headers(result.init.headers) : undefined
+      };
     }
     return {
       type: ResultType.error,
@@ -4406,21 +4433,21 @@ async function convertDataStrategyResultToDataResult(dataStrategyResult) {
     };
   }
   if (isDeferredData(result)) {
-    var _result$init3, _result$init4;
+    var _result$init5, _result$init6;
     return {
       type: ResultType.deferred,
       deferredData: result,
-      statusCode: (_result$init3 = result.init) == null ? void 0 : _result$init3.status,
-      headers: ((_result$init4 = result.init) == null ? void 0 : _result$init4.headers) && new Headers(result.init.headers)
+      statusCode: (_result$init5 = result.init) == null ? void 0 : _result$init5.status,
+      headers: ((_result$init6 = result.init) == null ? void 0 : _result$init6.headers) && new Headers(result.init.headers)
     };
   }
   if (isDataWithResponseInit(result)) {
-    var _result$init5, _result$init6;
+    var _result$init7, _result$init8;
     return {
       type: ResultType.data,
       data: result.data,
-      statusCode: (_result$init5 = result.init) == null ? void 0 : _result$init5.status,
-      headers: (_result$init6 = result.init) != null && _result$init6.headers ? new Headers(result.init.headers) : undefined
+      statusCode: (_result$init7 = result.init) == null ? void 0 : _result$init7.status,
+      headers: (_result$init8 = result.init) != null && _result$init8.headers ? new Headers(result.init.headers) : undefined
     };
   }
   return {
@@ -35651,7 +35678,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @remix-run/router */ "./node_modules/@remix-run/router/dist/router.js");
 /**
- * React Router DOM v6.28.0
+ * React Router DOM v6.29.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -36069,12 +36096,12 @@ function RouterProvider(_ref) {
       flushSync: flushSync,
       viewTransitionOpts: viewTransitionOpts
     } = _ref2;
-    deletedFetchers.forEach(key => fetcherData.current.delete(key));
     newState.fetchers.forEach((fetcher, key) => {
       if (fetcher.data !== undefined) {
         fetcherData.current.set(key, fetcher.data);
       }
     });
+    deletedFetchers.forEach(key => fetcherData.current.delete(key));
     let isViewTransitionUnavailable = router.window == null || router.window.document == null || typeof router.window.document.startViewTransition !== "function";
     // If this isn't a view transition or it's not available in this browser,
     // just update and be done with it
@@ -37181,7 +37208,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _remix_run_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @remix-run/router */ "./node_modules/@remix-run/router/dist/router.js");
 /**
- * React Router v6.28.0
+ * React Router v6.29.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -37509,7 +37536,8 @@ function useRoutesImpl(routes, locationArg, dataRouterState, future) {
   // router loaded. We can help them understand how to avoid that.
   "useRoutes() may be used only in the context of a <Router> component.") : 0 : void 0;
   let {
-    navigator
+    navigator,
+    static: isStatic
   } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(NavigationContext);
   let {
     matches: parentMatches
@@ -37574,7 +37602,7 @@ function useRoutesImpl(routes, locationArg, dataRouterState, future) {
     let segments = pathname.replace(/^\//, "").split("/");
     remainingPathname = "/" + segments.slice(parentSegments.length).join("/");
   }
-  let matches = (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_1__.matchRoutes)(routes, {
+  let matches = !isStatic && dataRouterState && dataRouterState.matches && dataRouterState.matches.length > 0 ? dataRouterState.matches : (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_1__.matchRoutes)(routes, {
     pathname: remainingPathname
   });
   if (true) {
@@ -38112,30 +38140,30 @@ function warningOnce(key, cond, message) {
 
 const alreadyWarned = {};
 function warnOnce(key, message) {
-  if (!alreadyWarned[message]) {
+  if ( true && !alreadyWarned[message]) {
     alreadyWarned[message] = true;
     console.warn(message);
   }
 }
 const logDeprecation = (flag, msg, link) => warnOnce(flag, "\u26A0\uFE0F React Router Future Flag Warning: " + msg + ". " + ("You can use the `" + flag + "` future flag to opt-in early. ") + ("For more information, see " + link + "."));
 function logV6DeprecationWarnings(renderFuture, routerFuture) {
-  if (!(renderFuture != null && renderFuture.v7_startTransition)) {
+  if ((renderFuture == null ? void 0 : renderFuture.v7_startTransition) === undefined) {
     logDeprecation("v7_startTransition", "React Router will begin wrapping state updates in `React.startTransition` in v7", "https://reactrouter.com/v6/upgrading/future#v7_starttransition");
   }
-  if (!(renderFuture != null && renderFuture.v7_relativeSplatPath) && (!routerFuture || !routerFuture.v7_relativeSplatPath)) {
+  if ((renderFuture == null ? void 0 : renderFuture.v7_relativeSplatPath) === undefined && (!routerFuture || !routerFuture.v7_relativeSplatPath)) {
     logDeprecation("v7_relativeSplatPath", "Relative route resolution within Splat routes is changing in v7", "https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath");
   }
   if (routerFuture) {
-    if (!routerFuture.v7_fetcherPersist) {
+    if (routerFuture.v7_fetcherPersist === undefined) {
       logDeprecation("v7_fetcherPersist", "The persistence behavior of fetchers is changing in v7", "https://reactrouter.com/v6/upgrading/future#v7_fetcherpersist");
     }
-    if (!routerFuture.v7_normalizeFormMethod) {
+    if (routerFuture.v7_normalizeFormMethod === undefined) {
       logDeprecation("v7_normalizeFormMethod", "Casing of `formMethod` fields is being normalized to uppercase in v7", "https://reactrouter.com/v6/upgrading/future#v7_normalizeformmethod");
     }
-    if (!routerFuture.v7_partialHydration) {
+    if (routerFuture.v7_partialHydration === undefined) {
       logDeprecation("v7_partialHydration", "`RouterProvider` hydration behavior is changing in v7", "https://reactrouter.com/v6/upgrading/future#v7_partialhydration");
     }
-    if (!routerFuture.v7_skipActionErrorRevalidation) {
+    if (routerFuture.v7_skipActionErrorRevalidation === undefined) {
       logDeprecation("v7_skipActionErrorRevalidation", "The revalidation behavior after 4xx/5xx `action` responses is changing in v7", "https://reactrouter.com/v6/upgrading/future#v7_skipactionerrorrevalidation");
     }
   }
