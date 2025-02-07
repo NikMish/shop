@@ -2,13 +2,14 @@
   "name": "my_shop_app",
   "version": "1.0.0",
   "description": "Display store items",
-  "homepage": ".",
+  "homepage": "https://misharev.com",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -w",
     "build:prod": "webpack --mode development",
     "start": "react-scripts start",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
