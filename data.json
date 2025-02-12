@@ -180,6 +180,20 @@
         "shop-images/bags/IMG_6256-Medium.jpeg",
         "shop-images/bags/IMG_6257-Medium.jpeg"
       ]
+    },
+    {
+      "id": 14,
+      "name": "Crossbody bag No. 14",
+      "description": "This is DIY one of a kind hand bag made out of denim jeans. Has two internal pocket and one on the front. Has long adjustable shoulder strap. Size is 8\" wide, 10.25\" tall and 1\" deep",
+      "price": 60,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/DWVGDZSHCZ93A",
+      "images": [
+        "shop-images/bags/cbb-14-1.jpeg",
+        "shop-images/bags/cbb-14-2.jpeg",
+        "shop-images/bags/cbb-14-3.jpeg"
+      ]
     }
   ]
 }
