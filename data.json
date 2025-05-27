@@ -198,7 +198,7 @@
     {
       "id": 15,
       "name": "Crossbody bag No. 15",
-      "description": "This is DIY one of a kind hand bag made out of denim jeans. Has two internal pocket and one on the front. Has long adjustable shoulder strap. Size is 8\" wide, 10.25\" tall and 1\" deep",
+      "description": "This is DIY one of a kind hand bag made out of denim jeans. Has two internal pockets and one on the front. Has long adjustable shoulder strap. Size is 8\" wide, 10.25\" tall and 1\" deep",
       "price": 70,
       "sold": 0,
       "category": "Shoulder bags",
@@ -209,6 +209,36 @@
         "shop-images/bags/cbb-15-3.jpeg",
         "shop-images/bags/cbb-15-4.jpeg",
         "shop-images/bags/cbb-15-5.jpeg"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Crossbody bag No. 16",
+      "description": "This is DIY one of a kind hand bag made out of denim jeans. Has long adjustable shoulder strap. Size is 7\" wide, 8\" tall and 1\" deep",
+      "price": 35,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/52KDACZMEHJ4L",
+      "images": [
+        "shop-images/bags/sml_cb_pockets_1.jpeg",
+        "shop-images/bags/sml_cb_pockets_2.jpeg",
+        "shop-images/bags/sml_cb_pockets_3.jpeg",
+        "shop-images/bags/sml_cb_pockets_4.jpeg"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Shoulder bag No. 17",
+      "description": "This is DIY one of a kind hand bag made out of denim jeans.Has three internal pockets and two small on front and back. Size is 11\" wide 4\" deep and 9.5\" tall to edge where the button is 32\" from the bottom to the top of the handle",
+      "price": 45,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/BG4HYYE4CB2ZU",
+      "images": [
+        "shop-images/bags/large_shldr_bag_1.jpeg",
+        "shop-images/bags/large_shldr_bag_2.jpeg",
+        "shop-images/bags/large_shldr_bag_3.jpeg",
+        "shop-images/bags/large_shldr_bag_5.jpeg"
       ]
     }
   ]
