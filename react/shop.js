@@ -48,7 +48,7 @@ const ShopApp = () => {
       <Filter data={data} setItems={setItems} items={items} />
       {(!loading && items && items.length > 0) && (
         <div className='shop-gallery'>
-          {items.sort((a, b) => a.id < b.id ? 1 : -1).map((item, index) => (
+          {items.sort((a, b) => a.id > b.id ? 1 : -1).sort((a, b) => a.sold > b.sold ? 1 : -1).map((item, index) => (
             <div key={index}>
               <Link to={`/shop/item/${item.id}`}>
                 <div className="item-image" style={{backgroundImage: `url('${item.images[0]}')`}}>
