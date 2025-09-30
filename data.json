@@ -283,6 +283,18 @@
         "shop-images/bags/smalllack_pocket_2.jpeg",
         "shop-images/bags/smalllack_pocket_3.jpeg"
       ]
+    },
+    {
+      "id": 22,
+      "name": "Teachers Apron 9",
+      "description": "This is DIY one of a kind teachers or gardening apron made out of denim jeans. Features five pockets and a two 1/2 d-rings for accessories. Easy to put on and off with plastic buckle. Size is 24\" wide, 14\" tall. Heavy duty apron.",
+      "price": 60,
+      "sold": 0,
+      "category": "Aprons",
+      "paypal": "https://www.paypal.com/ncp/payment/YVH4MSMBPX264",
+      "images": [
+        "apron_9_1.jpeg"
+      ]
     }
   ]
 }
