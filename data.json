@@ -295,6 +295,76 @@
       "images": [
         "shop-images/aprons/apron_9_1.jpeg"
       ]
+    },
+    {
+      "id": 23,
+      "name": "Shoulder or cross-body bag No. 23",
+      "description": "Carry your essentials in sustainable style with this unique cross-body or shoulder bag. Each one is handcrafted locally from recycled denim jeans, making it a one-of-a-kind statement piece. Compact yet practical, it measures 7.5\" wide, 8\" tall, and 1\" deep.",
+      "price": 35,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/SHVM6TXWU42V4",
+      "images": [
+        "shop-images/bags/small_bug_23_1.jpg",
+        "shop-images/bags/small_bug_23_2.jpg",
+        "shop-images/bags/small_bug_23_3.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Shoulder or cross-body bag No. 24",
+      "description": "Carry your essentials in sustainable style with this unique cross-body or shoulder bag. Each one is handcrafted locally from recycled denim jeans, making it a one-of-a-kind statement piece. Compact yet practical, it measures 7.5\" wide, 8\" tall, and 1\" deep.",
+      "price": 35,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/SHVM6TXWU42V4",
+      "images": [
+        "shop-images/bags/small_bug_24_1.jpg",
+        "shop-images/bags/small_bug_24_2.jpg",
+        "shop-images/bags/small_bug_24_3.jpg"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Shoulder or cross-body bag No. 25",
+      "description": "Carry your essentials in sustainable style with this unique cross-body or shoulder bag. Each one is handcrafted locally from recycled denim jeans, making it a one-of-a-kind statement piece. Compact yet practical, it measures 7.5\" wide, 8\" tall, and 1\" deep.",
+      "price": 35,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/SHVM6TXWU42V4",
+      "images": [
+        "shop-images/bags/small_bug_25_1.jpg",
+        "shop-images/bags/small_bug_25_2.jpg",
+        "shop-images/bags/small_bug_25_3.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Shoulder or cross-body bag No. 26",
+      "description": "Carry your essentials in sustainable style with this unique cross-body or shoulder bag. Each one is handcrafted locally from recycled denim jeans, making it a one-of-a-kind statement piece. Compact yet practical, it measures 7.5\" wide, 8\" tall, and 1\" deep.",
+      "price": 35,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/SHVM6TXWU42V4",
+      "images": [
+        "shop-images/bags/small_bug_26_1.jpg",
+        "shop-images/bags/small_bug_26_2.jpg",
+        "shop-images/bags/small_bug_26_3.jpg"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Shoulder or cross-body bag No. 27",
+      "description": "Carry your essentials in sustainable style with this unique cross-body or shoulder bag. Each one is handcrafted locally from recycled denim jeans, making it a one-of-a-kind statement piece. Compact yet practical, it measures 7.5\" wide, 8\" tall, and 1\" deep.",
+      "price": 35,
+      "sold": 0,
+      "category": "Shoulder bags",
+      "paypal": "https://www.paypal.com/ncp/payment/SHVM6TXWU42V4",
+      "images": [
+        "shop-images/bags/small_bug_27_1.jpg",
+        "shop-images/bags/small_bug_27_2.jpg",
+        "shop-images/bags/small_bug_27_3.jpg"
+      ]
     }
   ]
 }
