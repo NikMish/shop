@@ -10,7 +10,7 @@
     "build:prod": "webpack --mode development",
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b main -d build"
   },
   "keywords": [],
   "author": "",
