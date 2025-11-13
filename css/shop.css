@@ -280,25 +280,29 @@ h2 .sold {
   cursor: inherit;
   line-height: inherit;
   z-index: 0;
-  outline: none;
 }
 .filter select::-ms-expand {
   display: none;
+}
+.filter select {
+  outline: none;
 }
 .filter .select {
   display: grid;
   grid-template-areas: "select";
   align-items: center;
   position: relative;
+}
+.filter .select select, .filter .select::after {
+  grid-area: select;
+}
+.filter .select {
   width: 5rem;
   font-size: 1rem;
   cursor: pointer;
   line-height: 1;
   background-color: #fff;
   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-}
-.filter .select select, .filter .select::after {
-  grid-area: select;
 }
 .filter .select:not(.select--multiple)::after {
   content: "";

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import ReactDOM from "react-dom/client";
 import ShopApp from './shop';
 import DisplayItem from './display-item';
@@ -12,7 +12,7 @@ import './scss/style.scss';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navigation />
       <Routes>
         <Route path="/" exact element={<ShopApp />} />
@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/about" element={<About />}  />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
