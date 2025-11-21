@@ -365,6 +365,19 @@
         "shop-images/bags/small_bug_27_2.jpg",
         "shop-images/bags/small_bug_27_3.jpg"
       ]
+    },
+    {
+      "id": 28,
+      "name": "Handmade Jean Stocking with Laser Engraving No. 1",
+      "description": "Make your mantle stand out this year with a truly unique, sustainable stocking. Each piece is handmade from repurposed blue jeans and finished with a laser-engraved ornaments. It’s the perfect mix of rugged country charm and modern customization. Dimensions: Approx 12\" long x 8\" wide. Lining: Fully lined with festive flannel.",
+      "price": 35,
+      "sold": 1,
+      "category": "Decor",
+      "paypal": "https://www.paypal.com/ncp/payment/HPJPKLSJ265J4",
+      "images": [
+        "shop-images/stocking/Stocking - 1.jpeg",
+        "shop-images/stocking/Stocking - 2.jpeg"
+      ]
     }
   ]
 }
