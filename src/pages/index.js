@@ -1,14 +1,21 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const ShopIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const items = data.allDataJson.edges
+  const items = data.allDataJson.edges.sort((a, b) => {
+    return (b.node.order) < (a.node.order) ? 1 : -1
+  }).sort((a, b) => {
+    return (a.node.sold) > (b.node.sold) ? 1 : -1
+  })
   const categories = data.allDataJson.distinct
-console.log("items", items, "Categories:", categories);
+  const files = (data.allFile && data.allFile.nodes) || []
+  const fileMap = new Map(files.map(f => [f.relativePath, f]))
+  
   if (items.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -21,39 +28,46 @@ console.log("items", items, "Categories:", categories);
 
   return (
     <Layout location={location} title={siteTitle}>
-      <ol style={{ listStyle: `none` }}>
-        {items.map(item => {
-          const title = item.node.name
-          const imgUrl = item.node.images[0] || ""
+      <div className="shop-gallery">
+        {items.map(({ node }) => {
+          const title = node.name
+          const imgUrl = (node.images && node.images[0]) || ""
 
           return (
-            <li key={item.id}>
-              <article
-                className="list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={`/shop/${item.node.slug}`} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                </header>
-                <section>
-                  {
-                    imgUrl && (<img 
-                      src={`/${imgUrl}`} 
-                      alt={title} 
-                      style={{ maxWidth: "300px", marginBottom: "1rem" }} 
-                    />)
-                  }
-                </section>
-              </article>
-            </li>
+            <div className="shop-card" key={node.id || node.slug}>
+              <Link to={`/shop/${node.slug}`} itemProp="url">
+                {imgUrl && (
+                  <div className="image-wrap">
+                    {(() => {
+                      const file = fileMap.get(imgUrl)
+                      if (file && file.childImageSharp) {
+                        const img = getImage(file.childImageSharp.gatsbyImageData)
+                        return <GatsbyImage image={img} alt={title} />
+                      }
+                      return <img src={`/${imgUrl}`} alt={title} />
+                    })()}
+
+                    {node.sold && (
+                      <div className="sold-overlay">SOLD</div>
+                    )}
+                  </div>
+                )}
+                <div className="content">
+                  <span itemProp="headline">{title}</span>
+                </div>
+              </Link>
+                <div className={`price-tag sold-${node.sold}`}>
+                  <div>${node.price}</div>
+                  {!node.sold && (
+                    <div className="paypal-button">
+                      <a href={node.paypal}>Buy with PayPal</a>
+                    </div>
+                  )}
+                </div>
+            </div>
           )
         })}
-      </ol>
+      </div>
     </Layout>
   )
 }
@@ -74,10 +88,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allDataJson {
+    allDataJson(sort: {sold: ASC}) {
       edges {
         node {
           id
+          order
           category
           description
           images
@@ -89,6 +104,14 @@ export const pageQuery = graphql`
         }
       }
       distinct(field: {category: SELECT})
+    }
+    allFile(filter: {relativePath: {regex: "/shop-images/"}}) {
+      nodes {
+        relativePath
+        childImageSharp {
+          gatsbyImageData(width: 800, height: 800, placeholder: BLURRED, formats: [AUTO, WEBP])
+        }
+      }
     }
   }
 `
