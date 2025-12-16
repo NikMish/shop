@@ -24,6 +24,7 @@ const Seo = ({ description, title, children }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const ogImage = site.siteMetadata?.ogImage || "../images/misharev-shop-logo.png"
 
   return (
     <>
@@ -32,6 +33,8 @@ const Seo = ({ description, title, children }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
+      <meta property="og:image" content={ogImage} />
+
       {children}
     </>
   )
