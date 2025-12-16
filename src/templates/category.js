@@ -84,7 +84,7 @@ export default ShopIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Category" />
+export const Head = ({pageContext}) => <Seo title={`Category ${pageContext.category}`} />
 
 export const pageQuery = graphql`
   query ($category: String) {
