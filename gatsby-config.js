@@ -13,7 +13,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Misharev Shop`,
-    description: `A simple shop built with Gatsby.`,
+    description: `Discover unique, handmade shoulder bags, teacher aprons, keychains, and custom seasonal decor. Shop quality, handcrafted accessories and gifts.`,
     siteUrl: `https://misharev.com`,
   },
   plugins: [
@@ -85,7 +85,7 @@ module.exports = {
         // Include GTM in development.
         //
         // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: true,
+        includeInDevelopment: false,
 
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
