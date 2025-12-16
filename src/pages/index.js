@@ -4,21 +4,21 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import CategoryNav from "../components/category-nav"
 
-const ShopIndex = ({ data, location }) => {
+const ShopIndex = ({ data, path }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const items = data.allDataJson.edges.sort((a, b) => {
     return (b.node.order) < (a.node.order) ? 1 : -1
   }).sort((a, b) => {
     return (a.node.sold) > (b.node.sold) ? 1 : -1
   })
-  const categories = data.allDataJson.distinct
   const files = (data.allFile && data.allFile.nodes) || []
   const fileMap = new Map(files.map(f => [f.relativePath, f]))
   
   if (items.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout currentPath={path} title={siteTitle}>
         <p>
           Can't find any items, sorry.
         </p>
@@ -27,8 +27,12 @@ const ShopIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <div className="shop-gallery">
+    <Layout currentPath={path} title={siteTitle}>
+        
+      <CategoryNav />
+      
+      <main className="shop-gallery">
+
         {items.map(({ node }) => {
           const title = node.name
           const imgUrl = (node.images && node.images[0]) || ""
@@ -67,7 +71,7 @@ const ShopIndex = ({ data, location }) => {
             </div>
           )
         })}
-      </div>
+      </main>
     </Layout>
   )
 }
@@ -103,7 +107,6 @@ export const pageQuery = graphql`
           slug
         }
       }
-      distinct(field: {category: SELECT})
     }
     allFile(filter: {relativePath: {regex: "/shop-images/"}}) {
       nodes {

@@ -4,14 +4,13 @@ import ShopFooter from "./footer"
 
 import "../shop.scss"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-
+const Layout = ({ children, currentPath }) => {
+  const isRootPath = (currentPath === '/') ? true : false
+  
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <ShopHeader isRootPath={isRootPath} />
-      <main>{children}</main>
+      {children}
       <ShopFooter isRootPath={isRootPath} />
     </div>
   )

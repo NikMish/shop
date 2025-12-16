@@ -4,14 +4,14 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const ItemTemplate = ({ data, location }) => {
+const ItemTemplate = ({ data }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const item = data.dataJson;
   const files = (data.allFile && data.allFile.nodes) || []
   const fileMap = new Map(files.map(f => [f.relativePath, f]))
   
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout title={siteTitle}>
       <div className="shop-item">
         <h1>{item.name}</h1>
       

@@ -18,7 +18,6 @@ const ShopHeader = ({isRootPath}) => {
         />
         )
     } else {
-        console.log("ShopHeader not root path");
         header = (
         <Link to="/">
             <StaticImage

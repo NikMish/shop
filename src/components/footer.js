@@ -13,7 +13,7 @@ const ShopFooter = ({isRootPath}) => {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about">About and Contact</Link>
                 </li>
                 <li>
                     <Link to="/market">Market</Link>
@@ -21,7 +21,20 @@ const ShopFooter = ({isRootPath}) => {
             </ul>
         </nav>
 
-        © {new Date().getFullYear()} misharev.com
+        <StaticImage
+            className="shop-logo"
+            layout="constrained"
+            formats={["auto", "webp", "avif"]}
+            src="../images/misharev-shop-logo.png"
+            width={80}
+            quality={95}
+            alt="Misharev shop logo"
+            style={{margin: "0 auto 2rem"}}
+        />
+
+        <div className="shop-footer-credit">
+            © {new Date().getFullYear()} misharev.com
+        </div>
       </footer>
   )
 }

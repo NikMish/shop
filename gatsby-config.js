@@ -8,9 +8,12 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `Misharev Shop`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A simple shop built with Gatsby.`,
     siteUrl: `https://misharev.com`,
   },
   plugins: [
@@ -62,7 +65,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/misharev-shop-logo.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-transformer-json`,
