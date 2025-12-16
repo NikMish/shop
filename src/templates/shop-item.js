@@ -73,6 +73,7 @@ export const query = graphql`
       price
       paypal
       sold
+      slug
     }
     allFile(filter: {relativePath: {regex: "/shop-images/"}}) {
       nodes {

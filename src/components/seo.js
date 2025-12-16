@@ -27,7 +27,7 @@ const Seo = ({ description, title, ogimage, slug, children }) => {
   const ogImage = ogimage || "/images/misharev-shop-logo.png"
   const siteUrl = "https://misharev.com"
   const pageUrl = slug ? `${siteUrl}/${slug}` : siteUrl
-
+  
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
