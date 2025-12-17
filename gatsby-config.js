@@ -16,9 +16,6 @@ module.exports = {
     description: `Discover unique, handmade shoulder bags, teacher aprons, keychains, and custom seasonal decor. Shop quality, handcrafted accessories and gifts.`,
     siteUrl: `https://misharev.com`,
   },
-  siteMetadata: {
-    siteUrl: `https://misharev.com`,
-  },
   plugins: [
     `gatsby-plugin-image`,
     {
