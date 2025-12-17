@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -23,7 +23,7 @@ const ItemTemplate = ({ data }) => {
               return (
                 <div className="shop-item-image" key={index}>
                     {file && file.childImageSharp ? (
-                      <GatsbyImage image={getImage(file.childImageSharp.gatsbyImageData)} alt={`${item.name} - ${index + 1}`} />
+                      <GatsbyImage image={getImage(file.childImageSharp.gatsbyImageData)} alt={`Hand made upcycled ${item.name} - ${index + 1}`} />
                     ) : (
                       <img src={`/${imgSrc}`} alt={`${item.name} - ${index + 1}`} />
                     )}
@@ -35,7 +35,7 @@ const ItemTemplate = ({ data }) => {
 
         <p>{item.description}</p>
         {item.sold ? (
-          <div className="sold-notice">This item has been sold.</div>
+          <div className="sold-notice">This item is sold, but click here to see my current selection of handmade <Link to={`/category/${item.category}/`}>{item.category}</Link>.</div>
         ) : (
           <div className="price-section">
             <div className="price-tag">Price: ${item.price}</div>
@@ -73,6 +73,7 @@ export const query = graphql`
       paypal
       sold
       slug
+      category
     }
     allFile(filter: {relativePath: {regex: "/shop-images/"}}) {
       nodes {

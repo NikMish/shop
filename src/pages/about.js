@@ -11,7 +11,7 @@ const AboutPage = ({ location }) => {
             <div className="about-page content">
                 <h2>Crafting a Passionate Life</h2>
                 <p>As a lifelong crafter, I've always been drawn to the beauty and versatility of handmade items. From the tactile pleasure of working with different materials to the satisfaction of creating something truly unique, crafting has been my constant companion.</p>
-                <p>Inspired by a desire to reduce waste and promote sustainable living, I've turned my passion into a purpose. My <Link to="/category/Shoulder%20bags/">upcycled bags</Link>, aprons, and accessories are not just products; they're a testament to my belief in the power of creativity and conscious consumption.</p>
+                <p>Inspired by a desire to reduce waste and promote sustainable living, I've turned my passion into a purpose. My <Link to="/category/Shoulder%20bags/">upcycled bags</Link>, <Link to="/category/Aprons/">aprons</Link>, and <Link to="/category/Keychains/">accessories</Link> are not just products; they're a testament to my belief in the power of creativity and conscious consumption.</p>
                 <p>Each piece I create is a labor of love, infused with my personal touch and a commitment to quality. Whether you're seeking a functional accessory or a one-of-a-kind gift, I hope my creations bring joy and inspiration to your life.</p>
                 <h2>Crafting Custom and Personalized Creations</h2>
                 <p>In addition to my upcycled offerings, I also specialize in creating custom and personalized items. Whether you have a specific vision in mind or need help bringing an idea to life, I'm here to collaborate with you.</p>
