@@ -17,7 +17,7 @@ module.exports = {
     siteUrl: `https://misharev.com`,
   },
   siteMetadata: {
-    siteUrl: `https://www.example.com`, // Replace with your site's URL
+    siteUrl: `https://misharev.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
