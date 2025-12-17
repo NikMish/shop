@@ -185,6 +185,20 @@ footer {
 
     .sold-notice {
         margin-bottom: 2rem;
+        font-style: italic;
+    }
+
+    .description {
+        margin-bottom: 2rem;
+        line-height: 1.6;
+
+        ul {
+            padding-left: 1.5rem;
+
+            li {
+                margin-bottom: 0.5rem;
+            }
+        }
     }
 }
 
@@ -260,5 +274,21 @@ footer {
                 font-weight: bold;
             }
         }
+    }
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    text-align: center;
+
+    h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        line-height: 1.6;
     }
 }

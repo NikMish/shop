@@ -29,6 +29,10 @@ const ShopIndex = ({ data, path }) => {
 
   return (
     <Layout currentPath={path} title={siteTitle}>
+      <div className="intro-text">
+        <h2>The Value of Handmade in a Mass-Produced World</h2>
+        <p>At Misharev, we believe that the items you carry every day—the bag on your shoulder, the keychain in your pocket, the apron you wear to create—should have a soul. In a world flooded with fast fashion and disposable goods, we are dedicated to the "slow stitch," the thoughtful design, and the enduring quality of handmade craftsmanship.</p>
+      </div>
         
       <CategoryNav />
       

@@ -33,9 +33,9 @@ const ItemTemplate = ({ data }) => {
           </>
         )}
 
-        <p>{item.description}</p>
+        <div className="description" dangerouslySetInnerHTML={{ __html: item.description }}></div>
         {item.sold ? (
-          <div className="sold-notice">This item is sold, but click here to see my current selection of handmade <Link to={`/category/${item.category}/`}>{item.category}</Link>.</div>
+          <div className="sold-notice">This item is sold, please see my current selection of handmade <Link to={`/category/${item.category}/`}>{item.category}</Link>.</div>
         ) : (
           <div className="price-section">
             <div className="price-tag">Price: ${item.price}</div>
