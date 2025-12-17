@@ -1,28 +1,22 @@
 import * as React from "react"
 
-const PaypalButton = ({ppId}) => {
-    const tackClick = (e) => {
-        e.preventDefault();
-        console.log("PayPal button clicked", e);
+const PaypalButton = ({item}) => {
+    const tackClick = () => {
 
         if (typeof window !== 'undefined' && window.dataLayer) {
             window.dataLayer.push({
                 event: "paypal_button_click",
                 // You can add additional data/parameters here
-                category: "Engagement",
-                label: "PayPal Clicked",
-                value: 1,
+                item_name: item.name,
+                item_price: item.price,
             });
-            console.log("Pushing PayPal click event to dataLayer", window.dataLayer);
         }
         
     }
 
-    console.log("Rendering PayPalButton with ppId:", ppId);
-
   return (
     <div className="paypal-button">
-        <a href={ppId} rel="noopener noreferrer" onClick={tackClick}>Pay with PayPal</a>
+        <a href={item.paypal} rel="noopener noreferrer" onClick={tackClick}>Pay with PayPal</a>
     </div>
   )
 }

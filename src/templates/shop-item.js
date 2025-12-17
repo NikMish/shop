@@ -39,10 +39,7 @@ const ItemTemplate = ({ data }) => {
         ) : (
           <div className="price-section">
             <div className="price-tag">Price: ${item.price}</div>
-            {/* <div className="paypal-button">
-              <a href={item.paypal} rel="noopener noreferrer">Pay with PayPal</a>
-            </div> */}
-            <PaypalButton ppId={item.paypal} />
+            <PaypalButton item={item} />
           </div>
         )}
 

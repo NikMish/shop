@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import CategoryNav from "../components/category-nav"
+import PaypalButton from '../components/paypal-button';
 
 const ShopIndex = ({ data, path }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -64,7 +65,7 @@ const ShopIndex = ({ data, path }) => {
                   <div>${node.price}</div>
                   {!node.sold && (
                     <div className="paypal-button">
-                      <a href={node.paypal}>Buy with PayPal</a>
+                      <PaypalButton item={node} />
                     </div>
                   )}
                 </div>
