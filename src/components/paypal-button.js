@@ -2,6 +2,9 @@ import * as React from "react"
 
 const PaypalButton = ({ppId}) => {
     const tackClick = (e) => {
+        e.preventDefault();
+        console.log("PayPal button clicked", e);
+
         if (typeof window !== 'undefined' && window.dataLayer) {
             window.dataLayer.push({
                 event: "paypal_button_click",
@@ -10,6 +13,7 @@ const PaypalButton = ({ppId}) => {
                 label: "PayPal Clicked",
                 value: 1,
             });
+            console.log("Pushing PayPal click event to dataLayer", window.dataLayer);
         }
         
     }
