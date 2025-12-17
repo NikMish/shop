@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import PaypalButton from '../components/paypal-button';
 
 const ItemTemplate = ({ data }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -38,9 +39,10 @@ const ItemTemplate = ({ data }) => {
         ) : (
           <div className="price-section">
             <div className="price-tag">Price: ${item.price}</div>
-            <div className="paypal-button">
+            {/* <div className="paypal-button">
               <a href={item.paypal} rel="noopener noreferrer">Pay with PayPal</a>
-            </div>
+            </div> */}
+            <PaypalButton ppId={item.paypal} />
           </div>
         )}
 
