@@ -83,7 +83,7 @@ export default ShopIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Welcome to my shop" />
+export const Head = () => <Seo title="Misharev: Welcome to my shop" />
 
 export const pageQuery = graphql`
   {
