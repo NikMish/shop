@@ -38,6 +38,7 @@ const Seo = ({ description, title, ogimage, slug, children }) => {
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:url" content={pageUrl} />
       <meta property="fb:app_id" content="1207599554660797" />
+      <meta name="facebook-domain-verification" content="qufstx0y56x91ap4ydk6k4yu4gke7q" />
 
       {children}
     </>
