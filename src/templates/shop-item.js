@@ -23,9 +23,9 @@ const ItemTemplate = ({ data }) => {
               return (
                 <div className="shop-item-image" key={index}>
                     {file && file.childImageSharp ? (
-                      <GatsbyImage image={getImage(file.childImageSharp.gatsbyImageData)} alt={`${item.name} image ${index + 1}`} />
+                      <GatsbyImage image={getImage(file.childImageSharp.gatsbyImageData)} alt={`${item.name} - ${index + 1}`} />
                     ) : (
-                      <img src={`/${imgSrc}`} alt={`${item.name} image ${index + 1}`} />
+                      <img src={`/${imgSrc}`} alt={`${item.name} - ${index + 1}`} />
                     )}
                 </div>
               )
@@ -56,7 +56,7 @@ export default ItemTemplate;
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = ({data}) => <Seo title={data.dataJson.name} description={data.dataJson.description} ogimage={data.dataJson.images && data.dataJson.images[0] ? `/${data.dataJson.images[0]}` : null} slug={data.dataJson.slug} />
+export const Head = ({data}) => <Seo title={data.dataJson.name} description={data.dataJson.description} ogimage={data.dataJson.images && data.dataJson.images[0] ? `/${data.dataJson.images[0]}` : null} slug={`shop/${data.dataJson.slug}`} />
 
 export const query = graphql`
   query ($slug: String) {
