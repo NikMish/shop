@@ -37,6 +37,7 @@ const Seo = ({ description, title, ogimage, slug, children }) => {
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:url" content={pageUrl} />
+      <meta property="fb:app_id" content="1207599554660797" />
 
       {children}
     </>
