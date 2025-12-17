@@ -257,7 +257,8 @@
     "category": "Aprons",
     "paypal": "https://www.paypal.com/ncp/payment/YVH4MSMBPX264",
     "images": [
-      "shop-images/aprons/apron_9_1.jpeg"
+      "shop-images/aprons/denim-upcycled-half-apron-9-1.jpeg",
+      "shop-images/aprons/denim-upcycled-half-apron-9-2.jpeg"
     ]
   },
   {
@@ -397,6 +398,34 @@
     "images": [
       "shop-images/stocking/Stocking - 9.jpeg",
       "shop-images/stocking/Stocking - 10.jpeg"
+    ]
+  },
+  {
+    "id": 33,
+    "order": 33,
+    "slug": "teachers-apron-10",
+    "name": "Handmade Utility Apron for Teachers - Heavy Duty Denim Apron with Pockets No. 10",
+    "description": "Stay organized and stylish in the classroom with this handmade teacher`s apron. Designed specifically for educators, crafters, and makers, this utility apron features deep, reinforced pockets to hold your pens, tools, phone, and supplies. <ul><li>Professional & Practical: Made from heavy-duty canvas and fabric designed to withstand daily classroom wear and tear.</li><li>Custom Fit: Comfortable waist ties make it adjustable for all-day use.</li><li>Perfect Gift: An ideal gift for teachers, art instructors, or DIY hobbyists.</li></ul>Handcrafted by Misharev with a focus on durability and functionality. Keep your essentials within reach while protecting your clothes. Size is 24\" wide, 14\" tall. Heavy duty apron.",
+    "price": 60,
+    "sold": 0,
+    "category": "Aprons",
+    "paypal": "https://www.paypal.com/ncp/payment/9Y2H9G9WED6VU",
+    "images": [
+      "shop-images/aprons/upcycled-danim-half-apron.jpeg"
+    ]
+  },
+  {
+    "id": 34,
+    "order": 34,
+    "slug": "teachers-apron-11",
+    "name": "Handmade Utility Apron for Teachers - Heavy Duty Denim Apron with Pockets No. 11",
+    "description": "Stay organized and stylish in the classroom with this handmade teacher`s apron. Designed specifically for educators, crafters, and makers, this utility apron features deep, reinforced pockets to hold your pens, tools, phone, and supplies. <ul><li>Professional & Practical: Made from heavy-duty canvas and fabric designed to withstand daily classroom wear and tear.</li><li>Custom Fit: Comfortable waist ties make it adjustable for all-day use.</li><li>Perfect Gift: An ideal gift for teachers, art instructors, or DIY hobbyists.</li></ul>Handcrafted by Misharev with a focus on durability and functionality. Keep your essentials within reach while protecting your clothes. Size is 24\" wide, 14\" tall. Heavy duty apron.",
+    "price": 60,
+    "sold": 0,
+    "category": "Aprons",
+    "paypal": "https://www.paypal.com/ncp/payment/MEK56E3W6X3L2",
+    "images": [
+      "shop-images/aprons/pink-rose-handmade-upcycled-apron-11.jpeg"
     ]
   }
 ]
