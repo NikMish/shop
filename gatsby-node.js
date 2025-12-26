@@ -1,5 +1,8 @@
 const path = require('path');
 
+// Redirects.
+const { createRedirect } = require('gatsby');
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const itemTemplate = path.resolve(`./src/templates/shop-item.js`);
@@ -46,12 +49,8 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-};
 
-// Redirects.
-const { createRedirect } = require('gatsby');
-
-exports.createPages = async ({ actions }) => {
+  // Create redirects
   const { createRedirect } = actions;
 
   // Simple page redirect (e.g., old URL to new page)
@@ -67,5 +66,4 @@ exports.createPages = async ({ actions }) => {
     toPath: '/',
     isPermanent: true,
   });
-
 };
