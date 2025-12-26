@@ -47,3 +47,25 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+// Redirects.
+const { createRedirect } = require('gatsby');
+
+exports.createPages = async ({ actions }) => {
+  const { createRedirect } = actions;
+
+  // Simple page redirect (e.g., old URL to new page)
+  createRedirect({
+    fromPath: '/shop/shoulder-bug-no-10/',
+    toPath: '/shop/shoulder-bag-no-10/',
+    isPermanent: true, // 301 redirect
+  });
+
+  // Redirect from a directory to another
+  createRedirect({
+    fromPath: '/shop',
+    toPath: '/',
+    isPermanent: true,
+  });
+
+};
