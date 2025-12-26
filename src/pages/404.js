@@ -10,8 +10,21 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <div className="not-found content">
-        <h1>404: Not Found</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        <h1>Oops! Looks Like We Dropped a Stitch.</h1>
+
+        <p>The page you're looking for has wandered off, or perhaps it's been upcycled into something new. Don't worry — you don't have to start from scratch.</p>
+
+        <p>While we help find your way back, why not explore some of our favorite handmade collections?</p>
+
+        <p><strong>Quick Links to Get Back on Track:</strong></p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/category/Shoulder%20bags">Upcycled Denim Bags</a></li>
+          <li><a href="/category/Aprons">Teacher & Utility Aprons</a></li>
+          <li><a href="/category/Keychains">Keychains</a></li>
+          <li><a href="/category/Decor">Custom Decor</a></li>
+        </ul>
+
       </div>
     </Layout>
   )
