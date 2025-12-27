@@ -3,7 +3,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const AboutPage = ({ location }) => {
+const ReturnPage = ({ location }) => {
     const siteTitle = "Misharev: Return & Exchange Policy"
     return (
         <Layout location={location} title={siteTitle}>
@@ -39,4 +39,4 @@ const AboutPage = ({ location }) => {
 
 export const Head = () => <Seo title="Return & Exchange Policy" />
 
-export default AboutPage
+export default ReturnPage
