@@ -16,6 +16,9 @@ const ShopFooter = ({isRootPath}) => {
                     <Link to="/about">About and Contact</Link>
                 </li>
                 <li>
+                    <Link to="/return">Return & Exchange Policy</Link>
+                </li>
+                <li>
                     <Link to="/market">Market</Link>
                 </li>
             </ul>

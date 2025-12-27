@@ -7,6 +7,21 @@ import Seo from "../components/seo"
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
+  // Redirect logic for old/mistyped URLs
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
+  const redirect = () => {
+    if (currentPath === '/shop/') {
+      window.location.href = '/'
+    }
+    else if (currentPath === '/shop/shoulder-bug-no-10/') {
+      window.location.href = '/shop/shoulder-bag-no-10/'
+    }
+  }
+
+  React.useEffect(() => {
+    redirect()
+  }, [])
+
   return (
     <Layout location={location} title={siteTitle}>
       <div className="not-found content">

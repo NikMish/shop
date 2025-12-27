@@ -2,7 +2,6 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link } from "gatsby"
 
 const AboutPage = ({ location }) => {
     const siteTitle = "Misharev: Return & Exchange Policy"
@@ -15,7 +14,7 @@ const AboutPage = ({ location }) => {
                 <h3>Damaged or Defective Items</h3>
                 <p>If your order arrives damaged during shipping or has a structural defect, we want to make it right.</p>
                 <ul>
-                    <li>Please contact us at misharev@hotmail.com within 7 days of receiving your package.</li>
+                    <li>Please contact us at <a href="mailto:misharev@hotmail.com">misharev@hotmail.com</a> within 7 days of receiving your package.</li>
                     <li>Include your order number and clear photos of the damage or defect.</li>
                     <li>Once we verify the issue, we will offer you a replacement (if the item is not a one-of-a-kind piece) or a full refund.</li>
                 </ul>
@@ -28,7 +27,7 @@ const AboutPage = ({ location }) => {
 
                 <h3>How to Start a Return for Damage</h3>
                 <ul>
-                    <li>Email us at misharev@hotmail.com with your photos.</li>
+                    <li>Email us at <a href="mailto:misharev@hotmail.com">misharev@hotmail.com</a> with your photos.</li>
                     <li>If a return is approved, we will provide you with a return shipping label.</li>
                     <li>Pack the item securely and send it back to us within 14 days of receiving the return label.</li>
                     <li>Once we receive and inspect the item, your refund will be processed to your original payment method.</li>

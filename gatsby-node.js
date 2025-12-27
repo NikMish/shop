@@ -1,8 +1,5 @@
 const path = require('path');
 
-// Redirects.
-const { createRedirect } = require('gatsby');
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const itemTemplate = path.resolve(`./src/templates/shop-item.js`);
@@ -48,22 +45,5 @@ exports.createPages = async ({ graphql, actions }) => {
         category: category,
       },
     });
-  });
-
-  // Create redirects
-  const { createRedirect } = actions;
-
-  // Simple page redirect (e.g., old URL to new page)
-  createRedirect({
-    fromPath: '/shop/shoulder-bug-no-10/',
-    toPath: '/shop/shoulder-bag-no-10/',
-    isPermanent: true, // 301 redirect
-  });
-
-  // Redirect from a directory to another
-  createRedirect({
-    fromPath: '/shop',
-    toPath: '/',
-    isPermanent: true,
   });
 };

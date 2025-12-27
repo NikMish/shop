@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 
 const AboutPage = ({ location }) => {
     const siteTitle = "Misharev Shop"
+    
     return (
         <Layout location={location} title={siteTitle}>
             <div className="about-page content">
