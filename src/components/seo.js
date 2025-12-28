@@ -8,7 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, title, ogimage, slug, children }) => {
+const Seo = ({ description, title, ogimage, slug, children, product }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,6 +27,62 @@ const Seo = ({ description, title, ogimage, slug, children }) => {
   const ogImage = ogimage || "/images/misharev-shop-logo.png"
   const siteUrl = "https://misharev.com"
   const pageUrl = slug ? `${siteUrl}/${slug}` : siteUrl
+
+  // Buld schema.org structured data if schema prop is provided.
+  const schema = {}
+
+  if (product) {
+    schema["@context"] = "https://schema.org"
+    schema["@type"] = "Product"
+    schema["name"] = product.name
+    schema["description"] = metaDescription
+    schema["image"] = `${siteUrl}/${product.images && product.images[0] ? product.images[0] : ogImage}`
+    schema["url"] = `${siteUrl}/shop/${product.slug}`
+    schema["offers"] = {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
+      "price": product.price,
+      "availability": product.sold ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
+      "url": `${siteUrl}/shop/${product.slug}`,
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "d"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 3,
+            "maxValue": 14,
+            "unitCode": "d"
+          }
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/StoreReturnPolicy",
+        "returnPolicySeasonalOverride": "https://schema.org/NonSeasonalReturnPolicy",
+        "merchantReturnDays": 7,
+        "returnFees": "https://schema.org/FreeReturn",
+        "inStoreReturnsOffered": true,
+      }
+    }
+  }
   
   return (
     <>
@@ -39,6 +95,12 @@ const Seo = ({ description, title, ogimage, slug, children }) => {
       <meta property="og:url" content={pageUrl} />
       <meta property="fb:app_id" content="1207599554660797" />
       <meta name="facebook-domain-verification" content="qufstx0y56x91ap4ydk6k4yu4gke7q" />
+
+      {(schema && product) && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
 
       {children}
     </>

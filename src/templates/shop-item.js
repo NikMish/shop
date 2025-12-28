@@ -56,7 +56,7 @@ export default ItemTemplate;
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = ({data}) => <Seo title={data.dataJson.name} description={data.dataJson.description} ogimage={data.dataJson.images && data.dataJson.images[0] ? `/${data.dataJson.images[0]}` : null} slug={`shop/${data.dataJson.slug}`} />
+export const Head = ({data}) => <Seo title={data.dataJson.name} description={data.dataJson.description} ogimage={data.dataJson.images && data.dataJson.images[0] ? `/${data.dataJson.images[0]}` : null} slug={`shop/${data.dataJson.slug}`} product={data.dataJson} />
 
 export const query = graphql`
   query ($slug: String) {
