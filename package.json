@@ -4,6 +4,7 @@
   "description": "A simple shop built with GatsbyJS",
   "version": "0.1.0",
   "dependencies": {
+    "@xmldom/xmldom": "^0.8.11",
     "gatsby": "^5.0.0",
     "gatsby-plugin-google-tagmanager": "^5.15.0",
     "gatsby-plugin-image": "^3.15.0",
