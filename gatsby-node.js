@@ -108,7 +108,6 @@ exports.createPages = async ({ graphql, actions }) => {
     xmlString.push(`<g:service>Standard</g:service>`);
     xmlString.push(`<g:price>7.99 USD</g:price>`);
     xmlString.push(`</g:shipping>`);
-    xmlString.push(`<g:gtin>${node.slug}</g:gtin>`);
     xmlString.push(`<g:brand>Misharev.com</g:brand>`);
     xmlString.push('</item>');
   });
