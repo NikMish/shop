@@ -18,9 +18,6 @@ const NotFoundPage = ({ data, location }) => {
     else if (currentPath === '/shop/shoulder-bug-no-10/') {
       window.location.href = '/shop/shoulder-bag-no-10/'
     }
-    else if (currentPath === '/thankyou.html') {
-      window.location.href = '/thankyou'
-    }
   }, [])
 
   return (

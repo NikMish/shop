@@ -98,7 +98,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allDataJson(sort: {fields: sold, order: ASC}) {
+    allDataJson(sort: {sold: ASC}) {
       edges {
         node {
           id

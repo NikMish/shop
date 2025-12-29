@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
           }
         }
-        distinct(field: category)
+        distinct(field: {category: SELECT})
       }
     }
   `);
