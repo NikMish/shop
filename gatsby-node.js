@@ -97,7 +97,7 @@ exports.createPages = async ({ graphql, actions }) => {
     xmlString.push('<item>');
     xmlString.push(`<g:id>${node.id}</g:id>`);
     xmlString.push(`<g:title>${node.name}</g:title>`);
-    xmlString.push(`<g:description>${node.description}</g:description>`);
+    xmlString.push(`<g:description>${node.description.replace(/<\/?[^>]+(>|$)/g, "")}</g:description>`);
     xmlString.push(`<g:link>${siteMetadata.siteUrl}/shop/${node.slug}</g:link>`);
     xmlString.push(`<g:image_link>${siteMetadata.siteUrl}/${imgUrl}</g:image_link>`);
     xmlString.push(`<g:condition>new</g:condition>`);
