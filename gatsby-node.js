@@ -108,13 +108,17 @@ exports.createPages = async ({ graphql, actions }) => {
     xmlString.push(`<g:service>Standard</g:service>`);
     xmlString.push(`<g:price>7.99 USD</g:price>`);
     xmlString.push(`</g:shipping>`);
-    xmlString.push(`<g:gtin>123456789123</g:gtin>`);
+    xmlString.push(`<g:gtin>${node.slug}</g:gtin>`);
     xmlString.push(`<g:brand>Misharev.com</g:brand>`);
     xmlString.push('</item>');
   });
 
   xmlString.push('</channel>');
   xmlString.push('</rss>');
-  
-  fs.writeFileSync('./public/google-shopping-feed.xml', xmlString.join('\n'));
+
+  const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
+  const xmlDoc = new DOMParser().parseFromString(xmlString.join('\n'), 'text/xml');
+  const serialized = new XMLSerializer().serializeToString(xmlDoc);
+
+  fs.writeFileSync('./public/google-shopping-feed.xml', serialized);
 };
