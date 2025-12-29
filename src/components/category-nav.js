@@ -4,11 +4,11 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 const CategoryNav = ({currentCategory}) => {
     const data = useStaticQuery(
         graphql`
-           {
-                allDataJson(sort: {category: ASC}) {
-                    distinct(field: {category: SELECT})
-                }
+          {
+            allDataJson(sort: {fields: sold, order: ASC}) {
+              distinct(field: category)
             }
+          }
         `
       )
 

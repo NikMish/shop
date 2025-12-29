@@ -108,7 +108,7 @@ export const pageQuery = graphql`
           slug
         }
       }
-      distinct(field: {category: SELECT})
+      distinct(field: category)
     }
     allFile(filter: {relativePath: {regex: "/shop-images/"}}) {
       nodes {

@@ -20,6 +20,7 @@ const ShopIndex = ({ data, path }) => {
   if (items.length === 0) {
     return (
       <Layout currentPath={path} title={siteTitle}>
+        <Seo title="Misharev: Welcome to my shop" />
         <p>
           Can't find any items, sorry.
         </p>
@@ -97,7 +98,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allDataJson(sort: {sold: ASC}) {
+    allDataJson(sort: {fields: sold, order: ASC}) {
       edges {
         node {
           id
