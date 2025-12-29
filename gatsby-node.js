@@ -46,4 +46,75 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  // Google shooping feed xml generation
+  const fs = require('fs');
+  const xmlString = [];
+
+  const siteMetadata = await graphql(`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+        }
+      }
+    }
+  `).then(result => result.data.site.siteMetadata);
+
+  xmlString.push('<?xml version="1.0"?>');
+  xmlString.push('<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">');
+  xmlString.push('<channel>');
+  xmlString.push(`<title>${siteMetadata.title}</title>`);
+  xmlString.push(`<link>${siteMetadata.siteUrl}</link>`);
+  xmlString.push(`<description>${siteMetadata.description}</description>`);
+
+  const itemsResult = await graphql(`
+    query {
+      allDataJson(filter: {sold: {eq: 0}}) {
+        edges {
+          node {
+            id
+            name
+            description
+            slug
+            images
+            price
+          }
+        }
+      }
+    }
+  `);
+
+  if (itemsResult.errors) {
+    throw itemsResult.errors;
+  }
+
+  const shopItems = itemsResult.data.allDataJson.edges;
+  shopItems.forEach(({ node }) => {
+    const imgUrl = (node.images && node.images[0]) || "";
+    xmlString.push('<item>');
+    xmlString.push(`<g:id>${node.id}</g:id>`);
+    xmlString.push(`<g:title>${node.name}</g:title>`);
+    xmlString.push(`<g:description>${node.description}</g:description>`);
+    xmlString.push(`<g:link>${siteMetadata.siteUrl}/shop/${node.slug}</g:link>`);
+    xmlString.push(`<g:image_link>${siteMetadata.siteUrl}/${imgUrl}</g:image_link>`);
+    xmlString.push(`<g:condition>new</g:condition>`);
+    xmlString.push(`<g:availability>in stock</g:availability>`);
+    xmlString.push(`<g:price>${node.price} USD</g:price>`);
+    xmlString.push(`<g:shipping>`);
+    xmlString.push(`<g:country>US</g:country>`);
+    xmlString.push(`<g:service>Standard</g:service>`);
+    xmlString.push(`<g:price>7.99 USD</g:price>`);
+    xmlString.push(`</g:shipping>`);
+    xmlString.push(`<g:gtin>123456789123</g:gtin>`);
+    xmlString.push(`<g:brand>Misharev.com</g:brand>`);
+    xmlString.push('</item>');
+  });
+
+  xmlString.push('</channel>');
+  xmlString.push('</rss>');
+  
+  fs.writeFileSync('./public/google-shopping-feed.xml', xmlString.join('\n'));
 };
