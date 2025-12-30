@@ -81,6 +81,7 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
             images
             price
+            color
           }
         }
       }
@@ -100,6 +101,9 @@ exports.createPages = async ({ graphql, actions }) => {
     xmlString.push(`<g:description>${node.description.replace(/<\/?[^>]+(>|$)/g, "")}</g:description>`);
     xmlString.push(`<g:link>${siteMetadata.siteUrl}/shop/${node.slug}</g:link>`);
     xmlString.push(`<g:image_link>${siteMetadata.siteUrl}/${imgUrl}</g:image_link>`);
+    if (node.color) {
+      xmlString.push(`<g:color>${node.color}</g:color>`);
+    }
     xmlString.push(`<g:condition>new</g:condition>`);
     xmlString.push(`<g:availability>in stock</g:availability>`);
     xmlString.push(`<g:price>${node.price} USD</g:price>`);

@@ -107,6 +107,7 @@
     "price": 10,
     "sold": 0,
     "category": "Keychains",
+    "color": "Yellow",
     "paypal": "https://www.paypal.com/ncp/payment/SQPQFPMTSLKWN",
     "images": [
       "shop-images/keychain/key-chain-ukr-v2.jpg",
@@ -122,6 +123,7 @@
     "price": 5,
     "sold": 0,
     "category": "Keychains",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/B9PYDKUCGKJUG",
     "images": [
       "shop-images/keychain/key-chain-ukr-v3.jpg",
@@ -137,6 +139,7 @@
     "price": 60,
     "sold": 0,
     "category": "Shoulder bags",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/DWVGDZSHCZ93A",
     "images": [
       "shop-images/bags/handmade-upcycled-denim shoulder-bag-10-1.jpeg",
@@ -154,6 +157,7 @@
     "price": 45,
     "sold": 0,
     "category": "Shoulder bags",
+    "color": "Black",
     "paypal": "https://www.paypal.com/ncp/payment/E59WTXA7387DA",
     "images": [
       "shop-images/bags/denim-upcycled-shoulder-bag-15-1.jpeg",
@@ -255,6 +259,7 @@
     "price": 60,
     "sold": 0,
     "category": "Aprons",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/YVH4MSMBPX264",
     "images": [
       "shop-images/aprons/denim-upcycled-half-apron-9-1.jpeg",
@@ -287,6 +292,7 @@
     "price": 35,
     "sold": 0,
     "category": "Shoulder bags",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/NVLWJAPE4XFSC",
     "images": [
       "shop-images/bags/upcycled-denim-shoulder-bag-25-1.jpeg",
@@ -303,6 +309,7 @@
     "price": 35,
     "sold": 0,
     "category": "Shoulder bags",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/C7SVEA7M52UAY",
     "images": [
       "shop-images/bags/upcycled-denim-shoulder-bag-26-1.jpeg",
@@ -319,6 +326,7 @@
     "price": 35,
     "sold": 1,
     "category": "Shoulder bags",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/SHVM6TXWU42V4",
     "images": [
       "shop-images/bags/small_upcycled_denim_bag_27_1.jpg",
@@ -335,6 +343,7 @@
     "price": 20,
     "sold": 0,
     "category": "Decor",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/HPJPKLSJ265J4",
     "images": [
       "shop-images/stocking/Stocking - 1.jpeg",
@@ -350,6 +359,7 @@
     "price": 20,
     "sold": 0,
     "category": "Decor",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/USUD4HV2ZN4QC",
     "images": [
       "shop-images/stocking/Stocking - 11.jpeg",
@@ -361,10 +371,11 @@
     "order": 30,
     "slug": "christmas-stocking-with-laser-engraving-no-3",
     "name": "Christmas Stocking with Laser Engraving No. 3",
-    "description": "Make your mantle stand out this year with a truly unique, sustainable stocking. Each piece is handmade from repurposed blue jeans and finished with a laser-engraved ornaments. It’s the perfect mix of rugged country charm and modern customization. Dimensions: Approx 12\" long x 8\" wide. Lining: Fully lined with festive flannel.",
+    "description": "Make your mantle stand out this year with a truly unique, sustainable stocking. Each piece is handmade from repurposed blue jeans and finished with a laser-engraved ornaments. It's the perfect mix of rugged country charm and modern customization. Dimensions: Approx 12\" long x 8\" wide. Lining: Fully lined with festive flannel.",
     "price": 20,
     "sold": 0,
     "category": "Decor",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/F7MYL7AWPNVCU",
     "images": [
       "shop-images/stocking/Stocking - 17.jpeg",
@@ -376,10 +387,11 @@
     "order": 31,
     "slug": "christmas-stocking-with-laser-engraving-no-4",
     "name": "Christmas Stocking with Laser Engraving No. 4",
-    "description": "Make your mantle stand out this year with a truly unique, sustainable stocking. Each piece is handmade from repurposed blue jeans and finished with a laser-engraved ornaments. It’s the perfect mix of rugged country charm and modern customization. Dimensions: Approx 12\" long x 8\" wide. Lining: Fully lined with festive flannel.",
+    "description": "Make your mantle stand out this year with a truly unique, sustainable stocking. Each piece is handmade from repurposed blue jeans and finished with a laser-engraved ornaments. It's the perfect mix of rugged country charm and modern customization. Dimensions: Approx 12\" long x 8\" wide. Lining: Fully lined with festive flannel.",
     "price": 20,
     "sold": 0,
     "category": "Decor",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/G4LTTSVWYJL32",
     "images": [
       "shop-images/stocking/Stocking - 7.jpeg",
@@ -391,10 +403,11 @@
     "order": 32,
     "slug": "christmas-stocking-with-laser-engraving-no-5",
     "name": "Christmas Stocking with Laser Engraving No. 5",
-    "description": "Make your mantle stand out this year with a truly unique, sustainable stocking. Each piece is handmade from repurposed blue jeans and finished with a laser-engraved ornaments. It’s the perfect mix of rugged country charm and modern customization. Dimensions: Approx 12\" long x 8\" wide. Lining: Fully lined with festive flannel.",
+    "description": "Make your mantle stand out this year with a truly unique, sustainable stocking. Each piece is handmade from repurposed blue jeans and finished with a laser-engraved ornaments. It's the perfect mix of rugged country charm and modern customization. Dimensions: Approx 12\" long x 8\" wide. Lining: Fully lined with festive flannel.",
     "price": 20,
     "sold": 0,
     "category": "Decor",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/CUGQCG5Q8DHUN",
     "images": [
       "shop-images/stocking/Stocking - 9.jpeg",
@@ -406,10 +419,11 @@
     "order": 33,
     "slug": "teachers-apron-10",
     "name": "Handmade Utility Apron for Teachers - Heavy Duty Denim Apron with Pockets No. 10",
-    "description": "Stay organized and stylish in the classroom with this handmade teacher`s apron. Designed specifically for educators, crafters, and makers, this utility apron features deep, reinforced pockets to hold your pens, tools, phone, and supplies. <ul><li>Professional & Practical: Made from heavy-duty canvas and fabric designed to withstand daily classroom wear and tear.</li><li>Custom Fit: Comfortable waist ties make it adjustable for all-day use.</li><li>Perfect Gift: An ideal gift for teachers, art instructors, or DIY hobbyists.</li></ul>Handcrafted by Misharev with a focus on durability and functionality. Keep your essentials within reach while protecting your clothes. Size is 24\" wide, 14\" tall. Heavy duty apron.",
+    "description": "Stay organized and stylish in the classroom with this handmade teacher's apron. Designed specifically for educators, crafters, and makers, this utility apron features deep, reinforced pockets to hold your pens, tools, phone, and supplies. <ul><li>Professional & Practical: Made from heavy-duty canvas and fabric designed to withstand daily classroom wear and tear.</li><li>Custom Fit: Comfortable waist ties make it adjustable for all-day use.</li><li>Perfect Gift: An ideal gift for teachers, art instructors, or DIY hobbyists.</li></ul>Handcrafted by Misharev with a focus on durability and functionality. Keep your essentials within reach while protecting your clothes. Size is 24\" wide, 14\" tall. Heavy duty apron.",
     "price": 60,
     "sold": 0,
     "category": "Aprons",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/9Y2H9G9WED6VU",
     "images": [
       "shop-images/aprons/upcycled-danim-half-apron.jpeg",
@@ -425,6 +439,7 @@
     "price": 60,
     "sold": 0,
     "category": "Aprons",
+    "color": "Pink",
     "paypal": "https://www.paypal.com/ncp/payment/MEK56E3W6X3L2",
     "images": [
       "shop-images/aprons/pink-rose-handmade-upcycled-apron-11.jpeg"
@@ -439,6 +454,7 @@
     "price": 30,
     "sold": 0,
     "category": "Shoulder bags",
+    "color": "Blue",
     "paypal": "https://www.paypal.com/ncp/payment/CGGAG39SDURB8",
     "images": [
       "shop-images/bags/small-upcycled-denim-bag-28-1.jpeg",
@@ -455,6 +471,7 @@
     "price": 5,
     "sold": 0,
     "category": "Keychains",
+    "color": "Brown",
     "paypal": "https://www.paypal.com/ncp/payment/DA3CV69J9GHMQ",
     "images": [
       "shop-images/keychain/ukrainian_leather_keychain-4-1.jpeg",
