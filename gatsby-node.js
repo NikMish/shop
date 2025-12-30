@@ -82,6 +82,9 @@ exports.createPages = async ({ graphql, actions }) => {
             images
             price
             color
+            gender
+            age_group
+            size
           }
         }
       }
@@ -103,6 +106,15 @@ exports.createPages = async ({ graphql, actions }) => {
     xmlString.push(`<g:image_link>${siteMetadata.siteUrl}/${imgUrl}</g:image_link>`);
     if (node.color) {
       xmlString.push(`<g:color>${node.color}</g:color>`);
+    }
+    if (node.gender) {
+      xmlString.push(`<g:gender>${node.gender}</g:gender>`);
+    }
+    if (node.age_group) {
+      xmlString.push(`<g:age_group>${node.age_group}</g:age_group>`);
+    }
+    if (node.size) {
+      xmlString.push(`<g:size>${node.size}</g:size>`);
     }
     xmlString.push(`<g:condition>new</g:condition>`);
     xmlString.push(`<g:availability>in stock</g:availability>`);

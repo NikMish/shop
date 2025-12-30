@@ -140,6 +140,9 @@
     "sold": 0,
     "category": "Shoulder bags",
     "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "S",
     "paypal": "https://www.paypal.com/ncp/payment/DWVGDZSHCZ93A",
     "images": [
       "shop-images/bags/handmade-upcycled-denim shoulder-bag-10-1.jpeg",
@@ -158,6 +161,9 @@
     "sold": 0,
     "category": "Shoulder bags",
     "color": "Black",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "S",
     "paypal": "https://www.paypal.com/ncp/payment/E59WTXA7387DA",
     "images": [
       "shop-images/bags/denim-upcycled-shoulder-bag-15-1.jpeg",
@@ -260,6 +266,9 @@
     "sold": 0,
     "category": "Aprons",
     "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "L",
     "paypal": "https://www.paypal.com/ncp/payment/YVH4MSMBPX264",
     "images": [
       "shop-images/aprons/denim-upcycled-half-apron-9-1.jpeg",
@@ -293,6 +302,9 @@
     "sold": 0,
     "category": "Shoulder bags",
     "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "XS",
     "paypal": "https://www.paypal.com/ncp/payment/NVLWJAPE4XFSC",
     "images": [
       "shop-images/bags/upcycled-denim-shoulder-bag-25-1.jpeg",
@@ -310,6 +322,9 @@
     "sold": 0,
     "category": "Shoulder bags",
     "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "XS",
     "paypal": "https://www.paypal.com/ncp/payment/C7SVEA7M52UAY",
     "images": [
       "shop-images/bags/upcycled-denim-shoulder-bag-26-1.jpeg",
@@ -424,6 +439,9 @@
     "sold": 0,
     "category": "Aprons",
     "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "L",
     "paypal": "https://www.paypal.com/ncp/payment/9Y2H9G9WED6VU",
     "images": [
       "shop-images/aprons/upcycled-danim-half-apron.jpeg",
@@ -440,6 +458,9 @@
     "sold": 0,
     "category": "Aprons",
     "color": "Pink",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "L",
     "paypal": "https://www.paypal.com/ncp/payment/MEK56E3W6X3L2",
     "images": [
       "shop-images/aprons/pink-rose-handmade-upcycled-apron-11.jpeg"
@@ -455,6 +476,9 @@
     "sold": 0,
     "category": "Shoulder bags",
     "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "XS",
     "paypal": "https://www.paypal.com/ncp/payment/CGGAG39SDURB8",
     "images": [
       "shop-images/bags/small-upcycled-denim-bag-28-1.jpeg",
