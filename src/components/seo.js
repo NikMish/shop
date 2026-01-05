@@ -75,6 +75,7 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
         "applicableCountry": "US",
+        "merchantReturnLink": "https://schema.org/StoreReturnPolicy",
         "returnPolicySeasonalOverride": "https://schema.org/NonSeasonalReturnPolicy",
         "merchantReturnDays": 7,
         "returnFees": "https://schema.org/FreeReturn",
