@@ -22,7 +22,7 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description.replace(/<\/?[^>]+(>|$)/g, "") || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const ogImage = ogimage || "/images/misharev-shop-logo.png"
   const siteUrl = "https://misharev.com"
@@ -75,7 +75,6 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
         "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/StoreReturnPolicy",
         "returnPolicySeasonalOverride": "https://schema.org/NonSeasonalReturnPolicy",
         "merchantReturnDays": 7,
         "returnFees": "https://schema.org/FreeReturn",
