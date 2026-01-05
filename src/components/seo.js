@@ -22,7 +22,7 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
     `
   )
 
-  const metaDescription = description.replace(/<\/?[^>]+(>|$)/g, "") || site.siteMetadata.description
+  const metaDescription = (description) ? description.replace(/(<([^>]+)>)/gi, "") : site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const ogImage = ogimage || "/images/misharev-shop-logo.png"
   const siteUrl = "https://misharev.com"
