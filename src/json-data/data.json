@@ -296,7 +296,7 @@
   },
   {
     "id": 25,
-    "order": 40,
+    "order": 35,
     "slug": "shoulder-crossbody-bag-no-25",
     "name": "Small Handmade Upcycled Denim Crossbody or Shoulder Bag No. 25",
     "description": "Carry your essentials in sustainable style with this unique denim cross-body or shoulder bag. Each one is handcrafted locally from recycled denim jeans, making it a one-of-a-kind statement piece. Compact yet practical, it measures 7.5\" wide, 8\" tall, and 1\" deep.",
@@ -505,6 +505,27 @@
     "images": [
       "shop-images/keychain/ukrainian_leather_keychain-4-1.jpeg",
       "shop-images/keychain/ukrainian_leather_keychain-4-2.jpeg"
+    ]
+  },
+  {
+    "id": 37,
+    "order": 37,
+    "slug": "upcycled-shoulder-crossbody-patchwork-29",
+    "name": "Handmade Upcycled Denim Crossbody Bag - Sustainable Shoulder Bag No. 29",
+    "description": "<p>Give your wardrobe a second life. Our signature shoulder bag is handcrafted from premium reclaimed denim, ensuring that every piece is as unique as the person wearing it. By choosing upcycled materials, you're keeping high-quality textiles out of landfills without sacrificing style.</p><ul><li>Sustainable Soul: Made from 100% recycled denim jeans.</li><li>Built for Life: Featuring a secure top zipper and a durable, adjustable strap for the perfect fit.</li><li>Organized Interior: Two internal pockets to keep your phone and keys within reach.</li><li>The Perfect Size: At 9\" x 9\" x 2\", it's the ideal \"everyday\" bag—compact yet spacious.</li></ul>",
+    "price": 45,
+    "sold": 0,
+    "category": "Shoulder bags",
+    "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "S",
+    "paypal": "https://www.paypal.com/ncp/payment/XEVMNYSUGF85C",
+    "images": [
+      "shop-images/bags/upcycled-shoulder-bag-patchwork-29-1.jpeg",
+      "shop-images/bags/upcycled-shoulder-bag-patchwork-29-2.jpeg",
+      "shop-images/bags/upcycled-shoulder-bag-patchwork-29-3.jpeg",
+      "shop-images/bags/upcycled-shoulder-bag-patchwork-29-4.jpeg"
     ]
   }
 ]
