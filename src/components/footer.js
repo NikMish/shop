@@ -24,6 +24,9 @@ const ShopFooter = ({isRootPath}) => {
                 <li>
                     <Link to="/market">Market</Link>
                 </li>
+                <li>
+                    <Link to="/custom-keychains">Custom</Link>
+                </li>
             </ul>
         </nav>
 
