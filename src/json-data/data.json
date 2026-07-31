@@ -646,5 +646,27 @@
       "shop-images/bags/upcycled-denim-tote-stylish-3.jpeg",
       "shop-images/bags/upcycled-denim-tote-stylish-4.jpeg"
     ]
+  },
+  {
+    "id": 44,
+    "order": 44,
+    "slug": "upcycled-denim-tote-stylish-44",
+    "name": "Upcycled Denim Tote Bag - No. 44",
+    "description": "<p>Give your wardrobe a second life. Our new tote bag is handcrafted from premium reclaimed denim, ensuring that every piece is as unique as the person carrying it. By choosing upcycled materials, you're keeping high-quality textiles out of landfills without sacrificing style or everyday functionality.</p><ul><li>Sustainable Soul: Made from 100% recycled denim jeans.</li><li>Features: four external pockets and three internal pockets to keep your phone, keys, and daily essentials effortlessly organized.</li><li>Spacious Tote Design: Measures 13\" x 13\" x 4\" with sturdy 11\" shoulder straps for comfortable daily carry.</li></ul>",
+    "price": 45,
+    "sold": 0,
+    "category": "Shoulder bags",
+    "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "M",
+    "paypal": "https://www.paypal.com/ncp/payment/CHH9Z722YWZS4",
+    "images": [
+      "shop-images/bags/upcycled-denim-tote-44-1.jpeg",
+      "shop-images/bags/upcycled-denim-tote-44-2.jpeg",
+      "shop-images/bags/upcycled-denim-tote-44-3.jpeg",
+      "shop-images/bags/upcycled-denim-tote-44-4.jpeg",
+      "shop-images/bags/upcycled-denim-tote-44-5.jpeg"
+    ]
   }
 ]
