@@ -338,3 +338,11 @@ a.button {
     display: block;
     margin: 2rem auto;
 }
+
+.shop-breadcrumb {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    color: #888;
+}
