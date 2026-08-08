@@ -17,6 +17,6 @@ const ThankYou = () => {
     )
 }
 
-export const Head = () => <Seo title="Thank you! Misharev Shop" />
+export const Head = () => <Seo title="Thank you! Misharev.com" />
 
 export default ThankYou

@@ -31,17 +31,26 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
   // Buld schema.org structured data if schema prop is provided.
   const schema = {}
 
+  // Date
+  const date = new Date();
+
   if (product) {
     schema["@context"] = "https://schema.org"
     schema["@type"] = "Product"
     schema["name"] = product.name
     schema["description"] = metaDescription
+    schema["sku"] = product.slug
+    schema["brand"] = {
+      "@type": "Brand",
+      "name": "Misharev.com"
+    }
     schema["image"] = `${siteUrl}/${product.images && product.images[0] ? product.images[0] : ogImage}`
     schema["url"] = `${siteUrl}/shop/${product.slug}`
     schema["offers"] = {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "priceValidUntil": "2026-12-31",
+      "priceValidUntil": new Date(date.setFullYear(date.getFullYear() + 1)).toISOString().split('T')[0],
+      "itemCondition": "https://schema.org/NewCondition",
       "price": product.price,
       "availability": product.sold ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
       "url": `${siteUrl}/shop/${product.slug}`,

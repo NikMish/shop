@@ -17,7 +17,7 @@ const CategoryNav = ({currentCategory}) => {
 
   const story = (currentCategory) => {
     if (currentCategory === "Shoulder bags") {
-      return "<p>The Beauty of the \"Second Life\" Because we work with upcycled materials, no two bags are ever identical. Every pocket, seam, and shade of indigo tells a story of its previous life, giving you an accessory with a character that mass-produced bags simply can't match. Whether it's a patchwork messenger, a minimalist crossbody, or a bag adorned with custom embroidery, your Misharev bag is as unique as you are.</p>";
+      return "<p>The Beauty of the \"Second Life\" Because we work with upcycled materials, no two bags are ever identical. Every pocket, seam, and shade of indigo tells a story of its previous life, giving you an accessory with a character that mass-produced bags simply can't match. Whether it's a patchwork messenger, a minimalist crossbody, or a bag adorned with custom embroidery, your Misharev.com bag is as unique as you are.</p>";
     } else if (currentCategory === "Keychains") {
       return "<p>A Meaningful Gift for a Greater Cause A keychain is more than just a tool to keep your keys organized - it's a conversation starter. Our Ukraine Trident keyrings make thoughtful, patriotic gifts for friends, family, and members of the community. It's a small way to show big support and keep a piece of your heritage close at hand. Explore our range of materials and finishes below to find the perfect Tryzub symbol to carry with you.</p><p><strong>Every cent of the proceeds from this keychain goes directly to support Ukrainian relief efforts. 100% donation. 100% solidarity.</strong></p>";
     } else if (currentCategory === "Decor") {

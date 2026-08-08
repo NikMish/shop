@@ -12,8 +12,8 @@ module.exports = {
     DEV_SSR: true,
   },
   siteMetadata: {
-    title: `Misharev | Handmade Upcycled Bags, Custom Aprons & Laser Engraved Gifts`,
-    description: `Discover unique, handmade shoulder bags, teacher aprons, keychains, and custom seasonal decor. Shop quality, handcrafted accessories and gifts.`,
+    title: `Handmade Upcycled Bags, Custom Aprons & Laser Engraved Gifts | Misharev.com`,
+    description: `Discover unique, Handcrafted bags, teacher aprons, keychains, and custom seasonal decor. Shop quality, handcrafted accessories and gifts.`,
     siteUrl: `https://misharev.com`,
   },
   plugins: [

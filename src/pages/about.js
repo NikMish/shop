@@ -29,6 +29,6 @@ const AboutPage = ({ location }) => {
     )
 }
 
-export const Head = () => <Seo title="About Misharev Shop" />
+export const Head = () => <Seo title="About Misharev.com Shop" />
 
 export default AboutPage

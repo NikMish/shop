@@ -45,6 +45,7 @@ const ItemTemplate = ({ data }) => {
         ) : (
           <div className="price-section">
             <div className="price-tag">Price: ${item.price}</div>
+            <div className="free-shipping">Enjoy Free Standard Shipping anywhere in the continental US.</div>
             <PaypalButton item={item} />
           </div>
         )}
