@@ -690,5 +690,28 @@
       "shop-images/bags/upcycled-denim-tote-45-4.jpeg",
       "shop-images/bags/upcycled-denim-tote-45-5.jpeg"
     ]
+  },
+  {
+    "id": 46,
+    "order": 46,
+    "slug": "upcycled-denim-large-tote-stylish-46",
+    "name": "Upcycled Denim Large Tote Bag - No. 46",
+    "description": "<p>Give your wardrobe a second life. Our new tote bag is handcrafted from premium reclaimed denim, ensuring that every piece is as unique as the person carrying it. By choosing upcycled materials, you're keeping high-quality textiles out of landfills without sacrificing style or everyday functionality.</p><ul><li>Sustainable Soul: Made from 100% recycled denim jeans.</li><li>Features: one external pockets and two internal pockets to keep your phone, keys, and daily essentials effortlessly organized.</li><li>Spacious Tote Design: Measures 16\" x 15\" x 5\" with sturdy 10\" shoulder straps for comfortable daily carry.</li></ul>",
+    "price": 45,
+    "sold": 0,
+    "category": "Shoulder bags",
+    "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "L",
+    "paypal": "https://www.paypal.com/ncp/payment/BAW5JBWS262WN",
+    "images": [
+      "shop-images/bags/lee-tote-bag-large-1.jpeg",
+      "shop-images/bags/lee-tote-bag-large-2.jpeg",
+      "shop-images/bags/lee-tote-bag-large-3.jpeg",
+      "shop-images/bags/lee-tote-bag-large-4.jpeg",
+      "shop-images/bags/lee-tote-bag-large-5.jpeg",
+      "shop-images/bags/lee-tote-bag-large-6.jpeg"
+    ]
   }
 ]
