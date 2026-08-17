@@ -713,5 +713,27 @@
       "shop-images/bags/lee-tote-bag-large-5.jpeg",
       "shop-images/bags/lee-tote-bag-large-6.jpeg"
     ]
+  },
+  {
+    "id": 47,
+    "order": 47,
+    "slug": "upcycled-denim-tote-ukrainian-47",
+    "name": "Upcycled Denim Ukranian Theme Tote Bag - No. 47",
+    "description": "<p>Give your wardrobe a second life with this handcrafted unisex tote bag, masterfully repurposed from premium reclaimed denim. Designed with a versatile, gender-neutral aesthetic and built for daily utility, every piece features unique tone variations and stitching—ensuring no two bags are ever identical. By choosing upcycled fashion, you're making an eco-friendly statement and keeping quality textiles out of landfills without compromising on style or functionality.</p><ul><li>Sustainable Soul: Meticulously handmade from 100% upcycled recycled denim jeans.</li><li>Unisex Design: Timeless, versatile style suitable for everyday carry by everyone.</li><li>Features: four external pockets and two internal pockets to keep your phone, keys, and daily essentials effortlessly organized.</li><li>Spacious Tote Design: Measures 14.5\" x 14.5\" x 3.5\" with sturdy 11\" shoulder straps for comfortable daily carry.</li></ul>",
+    "price": 45,
+    "sold": 0,
+    "category": "Shoulder bags",
+    "color": "Blue",
+    "gender": "Female",
+    "age_group": "Adult",
+    "size": "L",
+    "paypal": "https://www.paypal.com/ncp/payment/BAW5JBWS262WN",
+    "images": [
+      "shop-images/bags/upcycled-denim-tote-ukrainian-47-1.jpeg",
+      "shop-images/bags/upcycled-denim-tote-ukrainian-47-2.jpeg",
+      "shop-images/bags/upcycled-denim-tote-ukrainian-47-3.jpeg",
+      "shop-images/bags/upcycled-denim-tote-ukrainian-47-4.jpeg",
+      "shop-images/bags/upcycled-denim-tote-ukrainian-47-5.jpeg"
+    ]
   }
 ]
