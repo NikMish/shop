@@ -7,15 +7,15 @@ import Seo from "../components/seo"
 import CategoryNav from "../components/category-nav"
 
 const ShopIndex = ({ data, pageContext, path }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const currentCategory = pageContext.category;
   const items = data.allDataJson.edges.sort((a, b) => {
-    return (b.node.order) < (a.node.order) ? 1 : -1
+    return (b.node.order) < (a.node.order) ? 1 : -1;
   }).sort((a, b) => {
-    return (a.node.sold) > (b.node.sold) ? 1 : -1
+    return (a.node.sold) > (b.node.sold) ? 1 : -1;
   })
-  const files = (data.allFile && data.allFile.nodes) || []
-  const fileMap = new Map(files.map(f => [f.relativePath, f]))
+  const files = (data.allFile && data.allFile.nodes) || [];
+  const fileMap = new Map(files.map(f => [f.relativePath, f]));
  
   if (items.length === 0) {
     return (
@@ -84,7 +84,7 @@ export default ShopIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = ({pageContext}) => <Seo title={`Category ${pageContext.category} | Misharev.com`} slug={`category/${pageContext.category}`} />
+export const Head = ({pageContext}) => <Seo title={`Category ${pageContext.category} | Misharev.com`} slug={`collection/${pageContext.category}`} />
 
 export const pageQuery = graphql`
   query ($category: String) {

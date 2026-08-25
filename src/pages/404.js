@@ -32,10 +32,10 @@ const NotFoundPage = ({ data, location }) => {
         <p><strong>Quick Links to Get Back on Track:</strong></p>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/category/Shoulder%20bags">Upcycled Denim Bags</a></li>
-          <li><a href="/category/Aprons">Teacher & Utility Aprons</a></li>
-          <li><a href="/category/Keychains">Keychains</a></li>
-          <li><a href="/category/Decor">Custom Decor</a></li>
+          <li><a href="/collection/Shoulder%20bags">Upcycled Denim Bags</a></li>
+          <li><a href="/collection/Aprons">Teacher & Utility Aprons</a></li>
+          <li><a href="/collection/Keychains">Keychains</a></li>
+          <li><a href="/collection/Decor">Custom Decor</a></li>
         </ul>
 
       </div>

@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const categories = result.data.allDataJson.distinct;
   categories.forEach(category => {
     createPage({
-      path: `/category/${category}`, // The URL path for the page
+      path: `/collection/${category}`, // The URL path for the page
       component: categoryTemplate,     // The template component
       context: {                   // Data passed to the template's GraphQL query
         category: category,

@@ -17,7 +17,7 @@ const ItemTemplate = ({ data }) => {
       <div className="shop-item">
 
         <div className="shop-breadcrumb">
-          <Link to="/">Home</Link> / <Link to={`/category/${item.category}/`}>{item.category}</Link> / {item.name}
+          <Link to="/">Home</Link> / <Link to={`/collection/${item.category}/`}>{item.category}</Link> / {item.name}
         </div>
         
         <h1>{item.name}</h1>
@@ -41,7 +41,7 @@ const ItemTemplate = ({ data }) => {
 
         <div className="description" dangerouslySetInnerHTML={{ __html: item.description }}></div>
         {item.sold ? (
-          <div className="sold-notice">This item is sold, please see my current selection of handmade <Link to={`/category/${item.category}/`}>{item.category}</Link>.</div>
+          <div className="sold-notice">This item is sold, please see my current selection of handmade <Link to={`/collection/${item.category}/`}>{item.category}</Link>.</div>
         ) : (
           <div className="price-section">
             <div className="price-tag">Price: ${item.price}</div>
@@ -52,7 +52,7 @@ const ItemTemplate = ({ data }) => {
 
         <a href="/">Go back home</a> 
         &nbsp;or&nbsp;
-        <a href={`/category/${item.category}/`}>view all {item.category} </a>
+        <a href={`/collection/${item.category}/`}>view all {item.category} </a>
       </div>
     </Layout>
   );

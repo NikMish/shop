@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-const CategoryNav = ({currentCategory}) => {
+const CategoryNav = ({currentCategory, categoryData}) => {
     const data = useStaticQuery(
         graphql`
           {
@@ -14,10 +14,10 @@ const CategoryNav = ({currentCategory}) => {
 
   const categories = data.allDataJson.distinct
 
-
+console.log("categoryData", categoryData)
   const story = (currentCategory) => {
     if (currentCategory === "Shoulder bags") {
-      return "<p>The Beauty of the \"Second Life\" Because we work with upcycled materials, no two bags are ever identical. Every pocket, seam, and shade of indigo tells a story of its previous life, giving you an accessory with a character that mass-produced bags simply can't match. Whether it's a patchwork messenger, a minimalist crossbody, or a bag adorned with custom embroidery, your Misharev.com bag is as unique as you are.</p>";
+      return "<p>Carry sustainability with style. Our collection of upcycled denim bags turns reclaimed blue jeans into durable, one-of-a-kind fashion pieces. Each handmade bag features unique washing tones, original pocket details, and reinforced stitching designed for daily carry.</p><p>By transforming post-consumer denim into functional totes, shoulder bags, and crossbody purses, every purchase supports eco-friendly fashion and keeps quality textiles out of landfills. Explore our handcrafted collection to find a truly unique piece that blends utility, durability, and sustainable craftsmanship.</p>";
     } else if (currentCategory === "Keychains") {
       return "<p>A Meaningful Gift for a Greater Cause A keychain is more than just a tool to keep your keys organized - it's a conversation starter. Our Ukraine Trident keyrings make thoughtful, patriotic gifts for friends, family, and members of the community. It's a small way to show big support and keep a piece of your heritage close at hand. Explore our range of materials and finishes below to find the perfect Tryzub symbol to carry with you.</p><p><strong>Every cent of the proceeds from this keychain goes directly to support Ukrainian relief efforts. 100% donation. 100% solidarity.</strong></p>";
     } else if (currentCategory === "Decor") {
@@ -39,7 +39,7 @@ const CategoryNav = ({currentCategory}) => {
                         const isActiveClass = (category === currentCategory) ? "active" : "";
                         return (
                         <li key={index}>
-                            <Link className={isActiveClass} to={`/category/${category}`}>{category}</Link>
+                            <Link className={isActiveClass} to={`/collection/${category}`}>{category}</Link>
                         </li>
                         )
                     })()
