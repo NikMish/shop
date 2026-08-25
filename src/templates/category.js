@@ -9,6 +9,7 @@ import CategoryNav from "../components/category-nav"
 const ShopIndex = ({ data, pageContext, path }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const currentCategory = pageContext.category;
+  const categoryData = data.allCategoryDataJson.edges.filter(({ node }) => node.key === currentCategory.toLowerCase().replace(/\s+/g, '-')).map(({ node }) => node);
   const items = data.allDataJson.edges.sort((a, b) => {
     return (b.node.order) < (a.node.order) ? 1 : -1;
   }).sort((a, b) => {
@@ -16,7 +17,7 @@ const ShopIndex = ({ data, pageContext, path }) => {
   })
   const files = (data.allFile && data.allFile.nodes) || [];
   const fileMap = new Map(files.map(f => [f.relativePath, f]));
- 
+  
   if (items.length === 0) {
     return (
       <Layout currentPath={path} title={siteTitle}>
@@ -30,7 +31,7 @@ const ShopIndex = ({ data, pageContext, path }) => {
   return (
     <Layout currentPath={path} title={siteTitle}>
         
-      <CategoryNav currentCategory={currentCategory} /> 
+      <CategoryNav currentCategory={currentCategory} categoryData={categoryData} /> 
       
       <main className="shop-gallery">
 
@@ -84,13 +85,29 @@ export default ShopIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = ({pageContext}) => <Seo title={`Category ${pageContext.category} | Misharev.com`} slug={`collection/${pageContext.category}`} />
+export const Head = ({data,pageContext}) => {
+  const currentCategory = pageContext.category;
+  const categoryData = data.allCategoryDataJson.edges.filter(({ node }) => node.key === currentCategory.toLowerCase().replace(/\s+/g, '-')).map(({ node }) => node);
+
+  return <Seo title={`${categoryData[0].title} | Misharev.com`} slug={categoryData[0].slag} description={categoryData[0].description} />;
+};
 
 export const pageQuery = graphql`
   query ($category: String) {
     site {
       siteMetadata {
         title
+      }
+    }
+    allCategoryDataJson {
+      edges {
+        node {
+          key
+          slag
+          title
+          description
+          story
+        }
       }
     }
     allDataJson(filter: {category: {eq: $category}}) {

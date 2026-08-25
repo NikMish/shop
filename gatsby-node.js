@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // Iterate over the items and create a page for each
+  // Iterate over the items and create a page for each Category
   const categories = result.data.allDataJson.distinct;
   categories.forEach(category => {
     createPage({

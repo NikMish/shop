@@ -22,8 +22,8 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
     `
   )
 
+  const metaTitle = title || site.siteMetadata?.title
   const metaDescription = (description) ? description.replace(/(<([^>]+)>)/gi, "") : site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
   const ogImage = ogimage || "/images/misharev-shop-logo.png"
   const siteUrl = "https://misharev.com"
   const pageUrl = slug ? `${siteUrl}/${slug}` : siteUrl
@@ -95,7 +95,7 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
   
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
