@@ -95,7 +95,7 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
   
   return (
     <>
-      <link rel="canonical" href="https://misharev.com" />
+      <link rel="canonical" href={`https://misharev.com${slug ? `/${slug}` : ''}`} />
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
