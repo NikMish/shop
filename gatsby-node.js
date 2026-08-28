@@ -97,13 +97,20 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const shopItems = itemsResult.data.allDataJson.edges;
   shopItems.forEach(({ node }) => {
+    // get first image from images array
     const imgUrl = (node.images && node.images[0]) || "";
+    // get the rest of the images from images array
+    const additionalImgUrls = (node.images && node.images.slice(1)) || [];
     xmlString.push('<item>');
     xmlString.push(`<g:id>${node.id}</g:id>`);
     xmlString.push(`<g:title>${node.name}</g:title>`);
     xmlString.push(`<g:description>${node.description.replace(/<\/?[^>]+(>|$)/g, "")}</g:description>`);
     xmlString.push(`<g:link>${siteMetadata.siteUrl}/shop/${node.slug}</g:link>`);
     xmlString.push(`<g:image_link>${siteMetadata.siteUrl}/${imgUrl}</g:image_link>`);
+    // comma separated list of additional image links
+    if (additionalImgUrls.length > 0) {
+      xmlString.push(`<g:additional_image_link>${additionalImgUrls.map(img => `${siteMetadata.siteUrl}/${img}`).join(',')}</g:additional_image_link>`);
+    }
     if (node.color) {
       xmlString.push(`<g:color>${node.color}</g:color>`);
     }
