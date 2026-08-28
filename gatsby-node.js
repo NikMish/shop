@@ -85,6 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
             gender
             age_group
             size
+            product_type
           }
         }
       }
@@ -124,6 +125,9 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     if (node.size) {
       xmlString.push(`<g:size>${node.size}</g:size>`);
+    }
+    if (node.description) {
+      xmlString.push(`<g:product_type>${node.product_type}</g:product_type>`);
     }
     xmlString.push(`<g:condition>new</g:condition>`);
     xmlString.push(`<g:availability>in stock</g:availability>`);
