@@ -1,2 +1,10 @@
-User-agent: *
+User-agent: Googlebot
+Disallow:
+User-agent: Googlebot-image
+Disallow:
+User-agent: Bingbot
+Disallow:
+User-agent: DuckDuckBot
+Disallow:
+
 Sitemap: https://misharev.com/sitemap-index.xml

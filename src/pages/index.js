@@ -52,9 +52,9 @@ const ShopIndex = ({ data, path }) => {
                       const file = fileMap.get(imgUrl)
                       if (file && file.childImageSharp) {
                         const img = getImage(file.childImageSharp.gatsbyImageData)
-                        return <GatsbyImage image={img} alt={title} />
+                        return <GatsbyImage image={img} alt={title || 'Unique and handmade item'} />
                       }
-                      return <img src={`/${imgUrl}`} alt={title} />
+                      return <img src={`/${imgUrl}`} alt={title || 'Unique and handmade item'} />
                     })()}
 
                     {node.sold && (
