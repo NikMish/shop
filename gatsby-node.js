@@ -109,7 +109,9 @@ exports.createPages = async ({ graphql, actions }) => {
     xmlString.push(`<g:image_link>${siteMetadata.siteUrl}/${imgUrl}</g:image_link>`);
     // comma separated list of additional image links
     if (additionalImgUrls.length > 0) {
-      xmlString.push(`<g:additional_image_link>${additionalImgUrls.map(img => `${siteMetadata.siteUrl}/${img}`).join(',')}</g:additional_image_link>`);
+      additionalImgUrls.forEach(img => {
+        xmlString.push(`<g:additional_image_link>${siteMetadata.siteUrl}/${img}</g:additional_image_link>`);
+      });
     }
     if (node.color) {
       xmlString.push(`<g:color>${node.color}</g:color>`);
