@@ -2,3 +2,7 @@ User-agent: Googlebot
 Disallow:
 User-agent: Googlebot-image
 Disallow:
+User-agent: Bingbot
+Disallow:
+User-agent: DuckDuckBot
+Disallow:
