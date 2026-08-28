@@ -65,7 +65,7 @@ export default ItemTemplate;
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = ({data}) => <Seo title={data.dataJson.name} description={data.dataJson.description} ogimage={data.dataJson.images && data.dataJson.images[0] ? `/${data.dataJson.images[0]}` : null} slug={`shop/${data.dataJson.slug}`} product={data.dataJson} />
+export const Head = ({data}) => <Seo title={data.dataJson.name} mDescription={data.dataJson.meta_description} description={data.dataJson.description} ogimage={data.dataJson.images && data.dataJson.images[0] ? `/${data.dataJson.images[0]}` : null} slug={`shop/${data.dataJson.slug}`} product={data.dataJson} />
 
 export const query = graphql`
   query ($slug: String) {
@@ -77,6 +77,7 @@ export const query = graphql`
     dataJson(slug: { eq: $slug }) {
       name
       description
+      meta_description
       images
       price
       paypal

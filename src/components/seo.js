@@ -8,7 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, title, ogimage, slug, children, product }) => {
+const Seo = ({ description, mDescription, title, ogimage, slug, children, product }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,9 +21,9 @@ const Seo = ({ description, title, ogimage, slug, children, product }) => {
       }
     `
   )
-
+console.log("SEO component props:", { description, mDescription, title, ogimage, slug, children, product });
   const metaTitle = title || site.siteMetadata?.title
-  const metaDescription = (description) ? description.replace(/(<([^>]+)>)/gi, "") : site.siteMetadata.description
+  const metaDescription = (mDescription) ? mDescription : (description) ? description.replace(/(<([^>]+)>)/gi, "") : site.siteMetadata.description
   const ogImage = ogimage || "/images/misharev-shop-logo.png"
   const siteUrl = "https://misharev.com"
   const pageUrl = slug ? `${siteUrl}/${slug}` : siteUrl
