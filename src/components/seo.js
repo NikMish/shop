@@ -20,8 +20,8 @@ const Seo = ({ description, mDescription, title, ogimage, slug, children, produc
         }
       }
     `
-  )
-console.log("SEO component props:", { description, mDescription, title, ogimage, slug, children, product });
+  );
+  
   const metaTitle = title || site.siteMetadata?.title
   const metaDescription = (mDescription) ? mDescription : (description) ? description.replace(/(<([^>]+)>)/gi, "") : site.siteMetadata.description
   const ogImage = ogimage || "/images/misharev-shop-logo.png"
@@ -95,7 +95,7 @@ console.log("SEO component props:", { description, mDescription, title, ogimage,
   
   return (
     <>
-      <link rel="canonical" href={`https://misharev.com${slug ? `/${slug}` : ''}`} />
+      {/* <link rel="canonical" href={`https://misharev.com${slug ? `/${slug}` : ''}`} /> */}
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
