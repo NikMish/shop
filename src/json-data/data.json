@@ -767,5 +767,20 @@
       "shop-images/bags/upcycled-denim-patchwork-tote-48-2.jpeg",
       "shop-images/bags/upcycled-denim-patchwork-tote-48-3.jpeg"
     ]
+  },
+  {
+    "id": 49,
+    "order": 37,
+    "slug": "classic-volkswagen-keychain-pu-leather",
+    "name": "Classic Volkswagen Keychain - Laser Engraved PU Leather with Keyring",
+    "description": "<p>Sleek, durable, and classic. This custom VW-engraved PU leather keychain combines a premium leather look with daily resistance to wear and tear. A perfect gift for Volkswagen enthusiasts, new drivers, or anyone wanting to elevate their key ring.</p>",
+    "price": 5.5,
+    "sold": 0,
+    "category": "Keychains",
+    "color": "Brown",
+    "paypal": "https://www.paypal.com/ncp/payment/V5WC3FV3G32PY",
+    "images": [
+      "shop-images/keychain/classic-vw-keychain-1.jpg"
+    ]
   }
 ]
