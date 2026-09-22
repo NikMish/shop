@@ -1,0 +1,17 @@
+curl -X POST "https://api.indexnow.org/indexnow" \
+     -H "Content-Type: application/json; charset=utf-8" \
+     -d '{
+           "host": "misharev.com",
+           "key": "9d9b310cf4fb47128617740b2840fb03",
+           "keyLocation": "https://misharev.com/9d9b310cf4fb47128617740b2840fb03.txt",
+           "urlList": [
+             "https://misharev.com/collection/keychains",
+             "https://misharev.com/collection/aprons",
+             "https://misharev.com/collection/shoulder-bags,
+             "https://misharev.com/collection/decor
+           ]
+         }'
+
+
+https://www.bing.com/indexnow?url=https://misharev.com/collection/Shoulder%20bags/&key=9d9b310cf4fb47128617740b2840fb03
+https://www.bing.com/indexnow?url=https://misharev.com/shop/teachers-apron-10/&key=9d9b310cf4fb47128617740b2840fb03
