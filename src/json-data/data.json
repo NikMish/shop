@@ -770,7 +770,7 @@
   },
   {
     "id": 49,
-    "order": 37,
+    "order": 1,
     "slug": "classic-volkswagen-keychain-pu-leather",
     "name": "Classic Volkswagen Keychain - Laser Engraved PU Leather with Keyring",
     "description": "<p>Sleek, durable, and classic. This custom VW-engraved PU leather keychain combines a premium leather look with daily resistance to wear and tear. A perfect gift for Volkswagen enthusiasts, new drivers, or anyone wanting to elevate their key ring.</p><p>Product Details:</p><ul><li>Material: High-quality PU Leather (Vegan)</li><li>Size: 2.5\" x 1.5\"</li><li>Hardware: Heavy-duty metal ring included</li></ul></p><p>A laser-engraved keychain is an ideal, practical gift that travels with a car enthusiast on every drive as a constant nod to their passion. Durable and packed with personal meaning, it turns an everyday necessity into a badge of pride for any gearhead.</p><p>Want something truly custom? <a href=\"/custom-keychains\">Visit our custom order page</a> to submit your own design idea or request a personalized engraving tailored just for you.</p>",
@@ -781,6 +781,53 @@
     "paypal": "https://www.paypal.com/ncp/payment/V5WC3FV3G32PY",
     "images": [
       "shop-images/keychain/classic-vw-keychain-1.jpg"
+    ]
+  },
+  {
+    "id": 50,
+    "order": 2,
+    "slug": "classic-volkswagen-bug-split-window-keychain-pu-leather",
+    "name": "Classic Volkswagen Bug Keychain - Laser Engraved PU Leather with Keyring",
+    "description": "<p>Classic style meets everyday carry. This laser-engraved keychain features the iconic vintage rear profile of a VW Beetle on one side and the classic VW logo on the reverse. Crafted with sharp detail for true air-cooled enthusiasts.</p><p>Product Details:</p><ul><li>Material: High-quality PU Leather (Vegan)</li><li>Size: 2.5\" x 1.5\"</li><li>Hardware: Heavy-duty metal ring included</li></ul></p><p>A laser-engraved keychain is an ideal, practical gift that travels with a car enthusiast on every drive as a constant nod to their passion. Durable and packed with personal meaning, it turns an everyday necessity into a badge of pride for any gearhead.</p><p>Want something truly custom? <a href=\"/custom-keychains\">Visit our custom order page</a> to submit your own design idea or request a personalized engraving tailored just for you.</p>",
+    "price": 5.5,
+    "sold": 0,
+    "category": "Keychains",
+    "color": "Brown",
+    "paypal": "https://www.paypal.com/ncp/payment/2JW5WZD9SXLNA",
+    "images": [
+      "shop-images/keychain/vw_keychain-bug-split.jpeg",
+      "shop-images/keychain/classic-vw-keychain-1.jpg"
+    ]
+  },
+  {
+    "id": 51,
+    "order": 3,
+    "slug": "volkswagen-wolfsburg-keychain-pu-leather",
+    "name": "Vintage VW Wolfsburg Crest - Laser Engraved PU Leather with Keyring",
+    "description": "<p>Pure Volkswagen heritage. This precision laser-engraved keychain features the historic Wolfsburg crest on one side and the classic VW logo on the reverse. A clean, subtle nod to air-cooled and vintage VW roots.</p><p>Product Details:</p><ul><li>Material: High-quality PU Leather (Vegan)</li><li>Size: 2.5\" x 1.5\"</li><li>Hardware: Heavy-duty metal ring included</li></ul></p><p>A laser-engraved keychain is an ideal, practical gift that travels with a car enthusiast on every drive as a constant nod to their passion. Durable and packed with personal meaning, it turns an everyday necessity into a badge of pride for any gearhead.</p><p>Want something truly custom? <a href=\"/custom-keychains\">Visit our custom order page</a> to submit your own design idea or request a personalized engraving tailored just for you.</p>",
+    "price": 5.5,
+    "sold": 0,
+    "category": "Keychains",
+    "color": "Brown",
+    "paypal": "https://www.paypal.com/ncp/payment/6ZX5G8R3HS9CQ",
+    "images": [
+      "shop-images/keychain/vw_keychain-wolfsburg.jpeg",
+      "shop-images/keychain/classic-vw-keychain-1.jpg"
+    ]
+  },
+  {
+    "id": 52,
+    "order": 4,
+    "slug": "built-not-bought-keychain-pu-leather",
+    "name": "\"Built Not Bought\" - Laser Engraved PU Leather with Keyring",
+    "description": "<p>Earned, not given. This laser-engraved keychain carries the definitive gearhead motto: \"Built Not Bought.\" Crisp, permanent etching crafted for DIY mechanics, project car builders, and anyone who takes pride in putting in their own wrench time.</p><p>Product Details:</p><ul><li>Material: High-quality PU Leather (Vegan)</li><li>Size: 2.5\" x 1.5\"</li><li>Hardware: Heavy-duty metal ring included</li></ul></p><p>A laser-engraved keychain is an ideal, practical gift that travels with a car enthusiast on every drive as a constant nod to their passion. Durable and packed with personal meaning, it turns an everyday necessity into a badge of pride for any gearhead.</p><p>Want something truly custom? <a href=\"/custom-keychains\">Visit our custom order page</a> to submit your own design idea or request a personalized engraving tailored just for you.</p>",
+    "price": 5.5,
+    "sold": 0,
+    "category": "Keychains",
+    "color": "Brown",
+    "paypal": "https://www.paypal.com/ncp/payment/GGPPX8YMEP2MA",
+    "images": [
+      "shop-images/keychain/keychain-built-not-bought.jpeg"
     ]
   }
 ]
