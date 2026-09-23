@@ -30,12 +30,12 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
+    "postbuild": "node src/indexnow.js",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public",
-    "postbuild": "node src/indexnow.js"
+    "deploy": "gatsby build && gh-pages -d public"
   }
 }
