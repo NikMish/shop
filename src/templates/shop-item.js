@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PaypalButton from '../components/paypal-button';
+import ProductSchema from '../components/ProductSchema';
 
 const ItemTemplate = ({ data }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -65,7 +66,33 @@ export default ItemTemplate;
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = ({data}) => <Seo title={data.dataJson.name} mDescription={data.dataJson.meta_description} description={data.dataJson.description} ogimage={data.dataJson.images && data.dataJson.images[0] ? `/${data.dataJson.images[0]}` : null} slug={`shop/${data.dataJson.slug}`} product={data.dataJson} />
+export const Head = ({data}) => {
+  const product = data.dataJson;
+  const siteUrl = 'https://misharev.com';
+
+  return (
+    <>
+      <Seo
+        title={product.name}
+        mDescription={product.meta_description}
+        description={product.description}
+        ogimage={product.images && product.images[0] ? `/${product.images[0]}` : null}
+        slug={`shop/${product.slug}`}
+      />
+      <ProductSchema
+        product={{
+          title: product.name,
+          description: product.description,
+          url: `${siteUrl}/shop/${product.slug}`,
+          price: product.price,
+          idOrSku: product.slug,
+          images: (product.images || []).map(image => `${siteUrl}/${image}`),
+          isSoldOut: product.sold,
+        }}
+      />
+    </>
+  );
+}
 
 export const query = graphql`
   query ($slug: String) {

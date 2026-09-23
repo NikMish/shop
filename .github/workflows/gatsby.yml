@@ -79,6 +79,8 @@ jobs:
         env:
           PREFIX_PATHS: 'true'
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
+      - name: Submit to IndexNow
+        run: node scripts/indexnow.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

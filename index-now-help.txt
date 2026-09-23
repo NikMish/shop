@@ -14,4 +14,4 @@ curl -X POST "https://api.indexnow.org/indexnow" \
 
 
 https://www.bing.com/indexnow?url=https://misharev.com/collection/Shoulder%20bags/&key=9d9b310cf4fb47128617740b2840fb03
-https://www.bing.com/indexnow?url=https://misharev.com/shop/teachers-apron-10/&key=9d9b310cf4fb47128617740b2840fb03
+https://www.bing.com/indexnow?url=https://misharev.com/shop/classic-volkswagen-bug-split-window-keychain-pu-leather/&key=9d9b310cf4fb47128617740b2840fb03

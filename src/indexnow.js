@@ -27,7 +27,7 @@ async function run() {
     body: JSON.stringify({
       host: CONFIG.host,
       key: CONFIG.key,
-      keyLocation: `https://\({CONFIG.host}/\){CONFIG.key}.txt`,
+      keyLocation: `https://misharev.com/9d9b310cf4fb47128617740b2840fb03.txt`,
       urlList: urls,
     }),
   });

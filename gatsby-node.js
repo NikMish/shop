@@ -1,6 +1,36 @@
 const fs = require('fs');
 const path = require('path');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type DataJson implements Node @dontInfer {
+      order: Int
+      slug: String
+      name: String
+      description: String
+      meta_description: String
+      price: Float
+      sold: Int
+      category: String
+      gender: String
+      age_group: String
+      size: String
+      product_type: String
+      images: [String]
+      color: String
+      paypal: String
+    }
+
+    type CategoryDataJson implements Node @dontInfer {
+      key: String
+      slag: String
+      title: String
+      description: String
+      story: String
+    }
+  `);
+};
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const itemTemplate = path.resolve(`./src/templates/shop-item.js`);
@@ -149,46 +179,4 @@ exports.createPages = async ({ graphql, actions }) => {
   const serialized = new XMLSerializer().serializeToString(xmlDoc);
 
   fs.writeFileSync('./public/google-shopping-feed.xml', serialized);
-};
-
-exports.onPostBuild = async ({ reporter }) => {
-  const host = 'misharev.com';
-  const key = process.env.INDEXNOW_KEY || 'YOUR_INDEXNOW_KEY';
-  const sitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
-
-  if (!fs.existsSync(sitemapPath)) {
-    reporter.warn('IndexNow: sitemap.xml not found in public directory.');
-    return;
-  }
-
-  const xml = fs.readFileSync(sitemapPath, 'utf8');
-  const urls = [...xml.matchAll(/(https?:\/\/[^\s<]+)<\/loc>/g)].map(m => m[1]);
-
-  if (urls.length === 0) {
-    reporter.info('IndexNow: No URLs found in sitemap.');
-    return;
-  }
-
-  reporter.info(`IndexNow: Submitting ${urls.length} URLs to search engines...`);
-
-  try {
-    const response = await fetch('https://api.indexnow.org/indexnow', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({
-        host,
-        key,
-        keyLocation: `https://\({host}/\){key}.txt`,
-        urlList: urls,
-      }),
-    });
-
-    if (response.ok || response.status === 202) {
-      reporter.success('IndexNow: URLs successfully submitted!');
-    } else {
-      reporter.warn(`IndexNow: Request failed with status ${response.status}`);
-    }
-  } catch (error) {
-    reporter.error('IndexNow: Failed to send request', error);
-  }
 };
