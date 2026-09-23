@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -148,4 +149,46 @@ exports.createPages = async ({ graphql, actions }) => {
   const serialized = new XMLSerializer().serializeToString(xmlDoc);
 
   fs.writeFileSync('./public/google-shopping-feed.xml', serialized);
+};
+
+exports.onPostBuild = async ({ reporter }) => {
+  const host = 'misharev.com';
+  const key = process.env.INDEXNOW_KEY || 'YOUR_INDEXNOW_KEY';
+  const sitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
+
+  if (!fs.existsSync(sitemapPath)) {
+    reporter.warn('IndexNow: sitemap.xml not found in public directory.');
+    return;
+  }
+
+  const xml = fs.readFileSync(sitemapPath, 'utf8');
+  const urls = [...xml.matchAll(/(https?:\/\/[^\s<]+)<\/loc>/g)].map(m => m[1]);
+
+  if (urls.length === 0) {
+    reporter.info('IndexNow: No URLs found in sitemap.');
+    return;
+  }
+
+  reporter.info(`IndexNow: Submitting ${urls.length} URLs to search engines...`);
+
+  try {
+    const response = await fetch('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        host,
+        key,
+        keyLocation: `https://\({host}/\){key}.txt`,
+        urlList: urls,
+      }),
+    });
+
+    if (response.ok || response.status === 202) {
+      reporter.success('IndexNow: URLs successfully submitted!');
+    } else {
+      reporter.warn(`IndexNow: Request failed with status ${response.status}`);
+    }
+  } catch (error) {
+    reporter.error('IndexNow: Failed to send request', error);
+  }
 };
