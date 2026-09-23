@@ -8,15 +8,15 @@ const ShippingPage = ({ location }) => {
     return (
         <Layout location={location} title={siteTitle}>
             <div className="shipping-page content">
-                <h2>Custom Crafted for You</h2>
+                <h1>Custom Crafted for You</h1>
                 <p>From "funky" geometric reimagining of classic logos to personalized text and intricate botanical patterns, we bring your vision to life. These keychains make for perfect meaningful gifts or a distinctive way to brand your own daily carry. Every order supports our commitment to upcycled materials and humanitarian efforts, ensuring that your custom piece looks good and does good.</p>
 
-                <h3>Ready to create your custom keychain?</h3>
+                <h2>Ready to create your custom keychain?</h2>
                 <p>To get started, simply click the button below to send us an email. To ensure the best results for your laser-engraved piece, please include the following details in your message:</p>
                 <ul>
-                    <li>Your Choice of Color: Let us know if you’d like Tan, Slate Gray, Rustic Brown, or Midnight Black PU Leather.</li>
+                    <li>Your Choice of Color: Let us know if you'd like Tan, Slate Gray, Rustic Brown, or Midnight Black PU Leather.</li>
                     <li>The Shape: Specify if you prefer a Circular or Rectangular keychain.</li>
-                    <li>The Design: Tell us what you’d like engraved (Text, a Name, or a specific Graphic).</li>
+                    <li>The Design: Tell us what you'd like engraved (Text, a Name, or a specific Graphic).</li>
                 </ul>
                 <h4>Important: Don't forget to attach your file!</h4>
                 <p>For the cleanest, sharpest engraving, please attach your design as a high-resolution PNG (Black & White) or an SVG vector file. If you're sending a logo (like a "funky" VW design), make sure it has clear lines and no gradients.</p>

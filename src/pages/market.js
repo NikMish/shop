@@ -8,7 +8,7 @@ const MarketPage = ({ path }) => {
     return (
         <Layout currentPath={path} title={siteTitle}>
             <div className="market-page content">
-                <h2>Upcycle Your Style</h2>
+                <h1>Upcycle Your Style</h1>
 
                 <p>Give your wardrobe a sustainable boost with our unique, upcycled denim aprons and bags. Each piece is handcrafted from discarded jeans, reducing fashion waste and adding a touch of vintage charm to your everyday style.</p>
 

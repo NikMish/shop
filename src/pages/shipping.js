@@ -8,7 +8,7 @@ const ShippingPage = ({ location }) => {
     return (
         <Layout location={location} title={siteTitle}>
             <div className="shipping-page content">
-                <h2>From Our Shop to Your Door - free</h2>
+                <h1>From Our Shop to Your Door - free</h1>
                 <p>At Misharev, we want to make our handmade goods as accessible as possible. To keep our prices simple and transparent, we are proud to offer Free Shipping on all orders within the United States.</p>
                
                 <h3>Processing Times</h3>

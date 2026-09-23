@@ -8,7 +8,7 @@ const ThankYou = () => {
     return (
         <Layout title={siteTitle}>
             <div className="about-page content">
-                <h2>Thank you very much for your business!</h2>
+                <h1>Thank you very much for your business!</h1>
                 <p>Your order has been received and will be processed shortly.</p>
 
                 <p>If you feel like you want to change it, please <a href="mailto:misharev@hotmail.com">email</a> me ASAP.</p>

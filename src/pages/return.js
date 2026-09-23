@@ -8,7 +8,7 @@ const ReturnPage = ({ location }) => {
     return (
         <Layout location={location} title={siteTitle}>
             <div className="return-page content">
-                <h2>Our Commitment to Quality</h2>
+                <h1>Our Commitment to Quality</h1>
                 <p>At Misharev, every item is handcrafted with care, and our upcycled denim pieces are designed to be as unique as the people who carry them. Because of the handmade and one-of-a-kind nature of our products, <strong>we only accept returns or exchanges for items that arrive damaged or defective.</strong></p>
                
                 <h3>Damaged or Defective Items</h3>
