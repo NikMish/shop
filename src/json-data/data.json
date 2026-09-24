@@ -911,5 +911,25 @@
     "images": [
       "shop-images/keychain/keychain-built-not-bought.jpeg"
     ]
+  },
+  {
+    "id": 53,
+    "order": 4,
+    "slug": "chevrolet-chevy-logo-bowtie-keychain-pu-leather",
+    "name": "Chevrolet Chevy Logo & Bowtie Laser Engraved PU Leather Keyring",
+    "description": "<p>Show off your Chevy pride with this handcrafted, laser-engraved PU leather keychain. Featuring the iconic Chevrolet bowtie emblem set against sharp racing stripes and the bold \"CHEVROLET\" wordmark, this durable keyring combines classic automotive style with clean craftsmanship.</p><p>Whether you drive a classic truck, a modern Chevy, or are looking for the perfect budget gift for a car enthusiast, this lightweight keychain keeps your keys secure without adding unnecessary bulk.</p><p>Product Details:</p><ul><li>Material: High-quality PU Leather (Vegan)</li><li>Size: 2.5\" x 1.5\"</li><li>Hardware: Heavy-duty metal ring included</li></ul></p><p>A laser-engraved keychain is an ideal, practical gift that travels with a car enthusiast on every drive as a constant nod to their passion. Durable and packed with personal meaning, it turns an everyday necessity into a badge of pride for any gearhead.</p><p>Want something truly custom? <a href=\"/custom-keychains\">Visit our custom order page</a> to submit your own design idea or request a personalized engraving tailored just for you.</p>",
+    "meta_description": "Handcrafted laser-engraved PU leather keychain featuring the iconic Chevrolet bowtie logo and wordmark with racing stripe accents. Perfect budget gift for Chevy trucks and vintage car enthusiasts. Ships fast via budget envelope shipping.",
+    "price": 6,
+    "sold": 0,
+    "category": "Keychains",
+    "gender": "Unisex",
+    "age_group": "Adult",
+    "size": "One Size",
+    "product_type": "Apparel & Accessories > Jewelry > Jewelry Accessories > Keychains",
+    "color": "Brown",
+    "paypal": "https://www.paypal.com/ncp/payment/KCNTWWJJF7TFG",
+    "images": [
+      "shop-images/keychain/keychain-chevrolet.jpeg"
+    ]
   }
 ]
