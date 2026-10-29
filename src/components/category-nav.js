@@ -5,7 +5,7 @@ const CategoryNav = ({currentCategory, categoryData}) => {
     const data = useStaticQuery(
         graphql`
           {
-            allDataJson(sort: {sold: ASC}) {
+            allDataJson(sort: {category: ASC}) {
               distinct(field: {category: SELECT})
             }
           }
